@@ -2,10 +2,11 @@ mui.init({
 
 });
 
-myCoupons = {
+changeNickName = {
 
 	// 事件注册
 	event: function() {
+		debugger;
 	},
 
 	
@@ -20,9 +21,10 @@ myCoupons = {
 		loadProperties(LANGUAGE_CODE);
 	},
 }
-myCoupons.init();
+changeNickName.init();
 
 function loadProperties(type) {
+	debugger;
 	jQuery.i18n.properties({
 		name: 'bbs', // 资源文件名称
 		path: '../../static/', // 资源文件所在目录路径
@@ -31,10 +33,11 @@ function loadProperties(type) {
 		cache: false,
 		encoding: 'UTF-8',
 		callback: function() { // 回调方法    
-			$("[name='info-coupons-title']").html($.i18n.prop('info-coupons-title'));
-			$("[name='info-no-coupons-desc']").html($.i18n.prop('info-no-coupons-desc'));
-			$("[name='info-no-coupons-bottom-desc']").html($.i18n.prop('info-no-coupons-bottom-desc'));
 			
+			$("[name='info-nickName-title']").html($.i18n.prop('info-nickName-title'));
+			$("[name='info-name']").html($.i18n.prop('info-name'));
+			$("[name='info-save']").html($.i18n.prop('info-save'));
+
 		}
 	});
 }

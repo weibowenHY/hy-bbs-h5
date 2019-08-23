@@ -412,6 +412,16 @@ a {
     color: #000000;
 }
 
+.aui-flex-srt-word-right {
+    height: 25px;
+    margin-right: 0.4rem;
+    color: #000000;
+    position: absolute;
+    right: 0.4rem;
+    color: red;
+}
+
+
 .aui-flex-srt img {
     width: 25px;
     height: 25px;
@@ -553,3 +563,31 @@ a {
 .info-no-coupons-bottom-desc{
 	color: gray;
 }
+.line-top {
+	margin-top: 1em;
+}
+.paycoin{
+	font-size: 30px;
+}
+
+.font-gray{
+	color: gray;
+	font-color: gray;
+}
+
+
+
+.bottomButton{
+	width: 95%;
+	left: 0.5rem;
+	right: 0.5rem;
+	border-radius: 10px;
+}
+
+.info-button{
+	width: 100%;
+	margin-top: 1rem;
+	border-radius: 0px solid;
+}
+
+

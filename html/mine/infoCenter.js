@@ -6,7 +6,6 @@ infoCenter = {
 
 	// 事件注册
 	event: function() {
-		debugger;
 	},
 
 	
@@ -15,7 +14,6 @@ infoCenter = {
 	},
 	dao: {},
 	init: function() {
-		debugger;
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);

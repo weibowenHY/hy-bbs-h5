@@ -2,27 +2,26 @@ mui.init({
 
 });
 
-myCoupons = {
+myBalanceInfo = {
 
 	// 事件注册
 	event: function() {
 	},
 
-	
 	service: {
-		
+
 	},
 	dao: {},
 	init: function() {
-		debugger;
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 	},
 }
-myCoupons.init();
+myBalanceInfo.init();
 
 function loadProperties(type) {
+	debugger;
 	jQuery.i18n.properties({
 		name: 'bbs', // 资源文件名称
 		path: '../../static/', // 资源文件所在目录路径
@@ -31,10 +30,10 @@ function loadProperties(type) {
 		cache: false,
 		encoding: 'UTF-8',
 		callback: function() { // 回调方法    
-			$("[name='info-coupons-title']").html($.i18n.prop('info-coupons-title'));
-			$("[name='info-no-coupons-desc']").html($.i18n.prop('info-no-coupons-desc'));
-			$("[name='info-no-coupons-bottom-desc']").html($.i18n.prop('info-no-coupons-bottom-desc'));
-			
+			$("[name='info-myBalance-title']").html($.i18n.prop('info-myBalance-title'));
+			$("[name='info-myBalance-withDraw-recharge']").html($.i18n.prop('info-myBalance-withDraw-recharge'));
+			$("[name='info-myBalance-withDraw-payCoin']").html("¥");
+
 		}
 	});
 }

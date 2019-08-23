@@ -2,25 +2,22 @@ mui.init({
 
 });
 
-myCoupons = {
+expense = {
 
 	// 事件注册
-	event: function() {
-	},
+	event: function() {},
 
-	
 	service: {
-		
+
 	},
 	dao: {},
 	init: function() {
-		debugger;
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 	},
 }
-myCoupons.init();
+expense.init();
 
 function loadProperties(type) {
 	jQuery.i18n.properties({
@@ -31,10 +28,10 @@ function loadProperties(type) {
 		cache: false,
 		encoding: 'UTF-8',
 		callback: function() { // 回调方法    
-			$("[name='info-coupons-title']").html($.i18n.prop('info-coupons-title'));
-			$("[name='info-no-coupons-desc']").html($.i18n.prop('info-no-coupons-desc'));
-			$("[name='info-no-coupons-bottom-desc']").html($.i18n.prop('info-no-coupons-bottom-desc'));
-			
+			$("[name='info-expense-title']").html($.i18n.prop('info-expense-title'));
+			$("[name='info-expense-commondity']").html($.i18n.prop('info-expense-commondity'));
+			$("[name='info-expense-price']").html($.i18n.prop('info-expense-price'));
+			$("[name='info-expense-Time']").html($.i18n.prop('info-expense-Time'));
 		}
 	});
 }
