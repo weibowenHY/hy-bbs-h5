@@ -1,37 +1,67 @@
-body{
-	width: 100%;height: 100%;
+body {
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
-	background-image: url(../res/login/login-bg.png);
+	/*background-image: url(../res/login/login-bg.png);*/
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
+	background-color: #FFFFFF;
 }
-#login{
-	width: 100%;height: 100%;
+input[type=text],input[type=password]{
+	margin-bottom: 0px;
+}
+
+#login {
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	position: relative;
 	overflow: hidden;
 }
-.login_img{
-	width: 5.48rem;height: 0.62rem;
-	background-image: url(../res/login/LOGO.png);
-	margin: 2.3rem auto 0;
+
+.login_img {
+	margin: 1.3rem 0.8rem;
 	background-size: 100% 100%;
 }
-.login_ipt{
-	width: 5rem;height: 0.8rem;
-	overflow: hidden;
-	background: #FFFFFF;
-	border: 2px solid #FFAA00;
-	border-radius: 8px;
+
+.login_title {
+	font-size: 32px;
 }
-.login_ipt:nth-child(2){
-	margin: 1.6rem auto 0;
+
+.login-describle {
+	margin-top: 0.3rem;
 }
-.login_ipt:nth-child(3){
-	margin: 0.2rem auto 0;
+
+.login-regiter {
+	color: #777a7a;
 }
-.login_ipt>input{
+
+.login_ipt {
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.login_ipt .login_ipt_content{
+	margin: auto 0.3rem;
+}
+
+.login_ipt:nth-child(2) {
+	margin: 0.3rem 0.5rem;
+}
+
+.login_ipt:nth-child(3) {
+	margin: 0.3rem 0.5rem;
+}
+
+.login_ipt:nth-child(4) {
+	margin: 0.3rem 0.5rem;
+}
+
+.login_ipt:nth-child(5) {
+	margin: 0.3rem 0.5rem;
+}
+
+.login_ipt>input {
 	width: 100%;
 	height: 100%;
 	padding-left: 0.68rem;
@@ -40,43 +70,76 @@ body{
 	border: none;
 	appearance: none;
 }
-#name{
-	background: url(../res/login/login-name.png) left center no-repeat;
+
+#name {
 	background-position-x: 0.3rem;
 	background-size: 0.28rem 0.28rem;
-}
-#password{
-	background: url(../res/login/login-password.png) left center no-repeat;
-	background-position-x: 0.3rem;
-	background-size: 0.28rem 0.28rem;
+	width: 100%;
+	height: auto;
+	padding: 0.3rem 0;
+	color: #e54e31;
+	background: none;
+	border: none;
 }
 
+#password {
+	background-position-x: 0.3rem;
+	background-size: 0.28rem 0.28rem;
+	width: 100%;
+	height: auto;
+	padding: 0.3rem 0;
+	color: #e54e31;
+	background: none;
+	border: none;
+}
+
+
 /*==========登录名或密码错误===========*/
-.login_ipt.wrong{
+
+.login_ipt.wrong {
 	background: #fff4f4;
 }
-.login_ipt.wrong>input{
+
+.login_ipt.wrong>input {
 	color: #FF0000;
 }
 
-.login_btn{
-	width: 5rem;height: 0.8rem;
+.login_btn {
+	width: 90%;
 	overflow: hidden;
 	margin: 0.8rem auto 0;
+	text-align: center;
 }
-.login_btn>button{
-	width: 5rem;height: 0.8rem;
+
+.login_btn>button {
+	width: 100%;
+	height: 0.8rem;
 	background: #FFAA00;
-	box-shadow: 0 2px 4px 0 #B97B00;
-	border-radius: 8px;
+	border-radius: 1px;
 	color: #FFFFFF;
 	border: none;
 }
-.footer{
+
+.footer {
 	width: 100%;
 	text-align: center;
 	font-size: 0.16rem;
 	color: #635F5E;
 	position: absolute;
-	bottom: 0.2rem;
+	bottom: 1.0rem;
+}
+.footer-register{
+	width: 100%;
+	text-align: center;
+	font-size: 0.16rem;
+	color: #635F5E;
+	position: absolute;
+	bottom: 1.0rem;
+}
+
+.login_forget_password{
+	float: right;
+	margin-top: 0.3rem;
+	color: #777a7a;
+	font-size: 14px;
 }
