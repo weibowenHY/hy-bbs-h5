@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Change Name</title>
+		<title>Settings</title>
 		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta content="yes" name="apple-mobile-web-app-capable" />
 		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -13,105 +13,197 @@
 		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
 		<script src="../../js/i18n/jquery.json.min.js"></script>
 		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
+		<script src="../../js/common/common.js"></script>
+		
 		<style>
-			.aui-icon-list-area {
-				margin-top: 0px;
+			.right-button{
+				font-size: 17px;
+				
+			}
+			.aui-icon-list-area{
+				height: 4.1667em;
+				margin-top: 2.1875rem;
+				background-color: #00c87b;
+				border-radius: 13px;
+				margin-left:0.4167em;
+				margin-right: 0.4167em;
 			}
 			
-			.aui-flex-srt {
-				width: 0px;
-			}
-			
-			.aui-flex-box {
-				font-size: 15px;
-			}
-			
-			.line-top {
+			.aui-icon-list-area{
+				height:2.1875rem;
 				margin-top: 1em;
+				
 			}
-			.none-border{
-				border-radius:0px;
-				background-color: #35304c;
-				border-color: #35304c;
-				line-height:3;
+			.aui-icon-list-area a{
+				height:2.1875rem;
+			
+				
+			}
+			
+			.aui-flex-srt-word{
+				color: #FFFFFF;
+				font-weight: bold;
+				font-size: 0.95625rem;
+				
 			}
 			
 			
+			.title-label{
+				margin-left: 0.8333em;
+				margin-top: 3.25em;
+				font-size: 14px;
+			}
+			
+			
+			
+			.box-shadow{  
+			  -moz-box-shadow:1px 2px 3px #dedcdc;
+			  -webkit-box-shadow:1px 2px 3px #dedcdc;
+			  box-shadow:2px 4.5px 9px #dedcdc;
+			}
+			.aui-flex{
+				padding: 0.1667em;
+			}
+			
+			.aui-flex-srt-word-right {
+			    position: absolute;
+			    color:#FFFFFF;
+				font-weight: bold;
+				height: auto;
+				right: 0.1667em;
+				margin-right: 0.1667em;
+			}
+			
+			.mui-content,.aui-scrollView{
+				background-color: #ffffff;
+			}
+			
+			.aui-inter-user-img img{
+				width: 80%;
+				height: auto;
+				border-radius: 0px;
+			}
+		
+			.aui-inter-user-img{
+				width:auto;
+				height: auto;
+				margin-left: 0.3rem;
+			}
+			
+			.aui-flex-arrow{
+				width: 100%;
+			}
+
+
+			.sheet-small{
+				height:2.1875rem;
+			}
+			
+			.aui-flex-srt-word{
+				width: 200%;
+			}
+			
+			.sheet-big{
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				height: 4.9375rem;
+			}
+			
+			.gradient-bg {
+				position: absolute;
+				bottom: 0;
+				margin-bottom: 0rem;
+				border-radius: 15px;
+				text-align: center;
+				
+			}
+			
+			.mui-btn-danger, .mui-btn-negative, .mui-btn-red{
+				background-color: #00C87B;
+				border: 1px solid #00C87B;
+			}
+			
+			.mui-btn,
+			button,
+			input[type=button],
+			input[type=reset],
+			input[type=submit] {
+				font-size:  0.95625rem;
+				border-radius: 15px;
+				height: 3rem;
+				margin-top: 5.175rem;
+			}
 		</style>
 	</head>
 
-	<body>
 
+	<body>
 		<header class="mui-bar mui-bar-nav aui-header ">
 			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #000000;"></a>
-			<h1 class="mui-title" style="color: #000000;" name="info-setting-title"></h1>
+			<h1 class="mui-title" style="color: #000000;" name="info-settings-title"></h1>
 		</header>
 		<div class="mui-content">
-			<section class="aui-scrollView">
-				<div class="aui-icon-list-area">
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-setting-messageNotice">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-setting-privacy">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-setting-deleteCache">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-				</div>
-
-				<div class="aui-icon-list-area line-top">
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-setting-accountSecurity">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-				</div>
-
-				<div class="aui-icon-list-area line-top">
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-setting-feedback">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-setting-about">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-setting-update">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-				</div>
-				<div class=" gradient-bg">
-					<div>
-						<button type="button" class="mui-btn mui-btn-danger info-button none-border" id="saveBtn" name="info-logout"></button>
+			<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
+				<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+					<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">
 					</div>
-				</div>
-			</section>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+			<div id="setting-privacy" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 0.6875rem;">
+				<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+					<div class="aui-flex-srt-word" name="info-settings-privacy" style="padding: 0.1667em;">
+					</div>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+			<div class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 0.6875rem;">
+				<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+					<div class="aui-flex-srt-word" name="info-settings-delte" style="padding: 0.1667em;">
+					</div>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+			
+			<div id="setting-security" class="aui-icon-list-area box-shadow sheet-big" style="margin-top: 1.6875rem;">
+				<a href="javascript:;" class="aui-flex" style="height: 4.9375rem;">
+					<div class="aui-flex-srt-word" name="info-settings-security" style="padding: 0.1667em;">
+					</div>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+			
+			<div id="setting-feedback" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 1.6875rem;">
+				<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+					<div class="aui-flex-srt-word" name="info-settings-feedback" style="padding: 0.1667em;">
+					</div>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+			<div class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 0.6875rem;">
+				<a id="setting-about" href="javascript:;" class="aui-flex" style="height: 2.1875rem;" >
+					<div class="aui-flex-srt-word" name="info-settings-about" style="padding: 0.1667em;">
+					</div>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+			<div class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 0.6875rem;">
+				<a href="javascript:;" class="aui-flex" style="height: 2.1875rem;">
+					<div class="aui-flex-srt-word" name="info-settings-update" style="padding: 0.1667em;">
+					</div>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+			<div class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 0.6875rem;">
+				<a href="javascript:;" class="aui-flex" style="height: 2.1875rem;">
+					<div class="aui-flex-srt-word" name="info-settings-language" style="padding: 0.1667em;">
+					</div>
+					<div class="aui-flex-arrow"></div>
+				</a>
+			</div>
+				<button type="button" class="mui-btn mui-btn-danger bottomButton"  id="logout-btn" name="info-settings-logout" style="font-weight: bold;"></button>
 		</div>
+		
 	</body>
 	<script src="../../js/mui.min.js"></script>
 	<script src="settings.js"></script>

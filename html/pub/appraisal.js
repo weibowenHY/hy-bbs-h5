@@ -1,0 +1,53 @@
+mui.init({
+
+});
+
+appraisal = {
+
+	// 事件注册
+	event: function() {
+	},
+
+	
+	service: {
+		
+	},
+	dao: {},
+	init: function() {
+		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
+		var LANGUAGE_CODE = "en";
+		loadProperties(LANGUAGE_CODE);
+	},
+}
+appraisal.init();
+
+function loadProperties(type) {
+	jQuery.i18n.properties({
+		name: 'bbs', // 资源文件名称
+		path: '../../static/', // 资源文件所在目录路径
+		mode: 'map', // 模式：变量或 Map 
+		language: type, // 对应的语言
+		cache: false,
+		encoding: 'UTF-8',
+		callback: function() { // 回调方法    
+			
+		$("[name='info-appraisal-authe']").html($.i18n.prop('info-appraisal-authe'));
+		$("[name='info-appraisal-hot']").html($.i18n.prop('info-appraisal-hot'));
+		$("[name='info-appraisal-cure']").html($.i18n.prop('info-appraisal-cure'));
+		$("[name='info-appraisal-quick']").html($.i18n.prop('info-appraisal-quick'));
+		$("[name='info-appraisal-button']").html($.i18n.prop('info-appraisal-button'));
+		$("[name='info-appraisal-appointment']").html($.i18n.prop('info-appraisal-appointment'));
+		$("[name='info-appraisal-time']").html($.i18n.prop('info-appraisal-time'));
+		
+		$("[name='info-appraisal-select']").html($.i18n.prop('info-appraisal-select'));
+		$("[name='info-appraisal-film']").html($.i18n.prop('info-appraisal-film'));
+		
+		$("[name='info-appraisal-await']").html($.i18n.prop('info-appraisal-await'));
+		$("[name='info-appraisal-form']").html($.i18n.prop('info-appraisal-form'));
+		
+		
+		
+
+		}
+	});
+}

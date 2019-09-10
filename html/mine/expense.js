@@ -5,7 +5,8 @@ mui.init({
 expense = {
 
 	// 事件注册
-	event: function() {},
+	event: function() {
+	},
 
 	service: {
 
@@ -29,9 +30,9 @@ function loadProperties(type) {
 		encoding: 'UTF-8',
 		callback: function() { // 回调方法    
 			$("[name='info-expense-title']").html($.i18n.prop('info-expense-title'));
-			$("[name='info-expense-commondity']").html($.i18n.prop('info-expense-commondity'));
+			$("[name='info-expense-commodity']").html($.i18n.prop('info-expense-commodity'));
 			$("[name='info-expense-price']").html($.i18n.prop('info-expense-price'));
-			$("[name='info-expense-Time']").html($.i18n.prop('info-expense-Time'));
+			$("[name='info-expense-time']").html($.i18n.prop('info-expense-time'));
 		}
 	});
 }

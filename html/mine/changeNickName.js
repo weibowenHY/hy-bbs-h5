@@ -6,7 +6,6 @@ changeNickName = {
 
 	// 事件注册
 	event: function() {
-		debugger;
 	},
 
 	
@@ -15,7 +14,6 @@ changeNickName = {
 	},
 	dao: {},
 	init: function() {
-		debugger;
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
@@ -24,7 +22,6 @@ changeNickName = {
 changeNickName.init();
 
 function loadProperties(type) {
-	debugger;
 	jQuery.i18n.properties({
 		name: 'bbs', // 资源文件名称
 		path: '../../static/', // 资源文件所在目录路径
@@ -37,6 +34,8 @@ function loadProperties(type) {
 			$("[name='info-nickName-title']").html($.i18n.prop('info-nickName-title'));
 			$("[name='info-name']").html($.i18n.prop('info-name'));
 			$("[name='info-save']").html($.i18n.prop('info-save'));
+			
+			
 
 		}
 	});

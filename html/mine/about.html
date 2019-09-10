@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>update</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link href="../../css/login/style.css" rel="stylesheet" type="text/css"/>
+	   <script src="../../js/jquery/jquery-3.2.1.min.js"></script>
+	   <script src="../../js/i18n/jquery.json.min.js"></script>
+	   <script src="../../js/i18n/jquery.i18n.properties.js"></script>
+	   <script src="../../js/common/common.js"></script>
+	   <style type="text/css">
+		   .mui-content{
+			   background-color: #F9F9F9;
+		   }
+			.aui-mon-list{
+				background-color: #FFFFFF;
+			}
+			.aui-code-btn{
+				padding-top: 0px;
+			}
+			.midle-height{
+				height: 3.125rem;
+				font-weight: bold;
+				color: #000000;
+			}
+	   </style>
+    </head>
+    <body>
+     <header class="mui-bar mui-bar-nav aui-header ">
+     	<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #000000;"></a>
+     	<h1 class="mui-title" style="color: #000000;" name="info-about-title"></h1>
+     </header>
+	  <div class="mui-content">
+        <section class="aui-flexView">
+            <section class="aui-scrollView">
+                <div class="aui-code-box">
+                    <div class="aui-code-logo">
+                        <div class="aui-code-logo-img">
+                            <img src="../../res/update/update.png" alt="">
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="aui-code-btn">
+                            <div class="gradient-bg">
+                            	<div >
+                            		<button type="button" class="mui-btn bottomButton btn-cus"  id="shareBtn" name="info-about-btn"></button>
+                            	</div>
+                            </div>
+                        </div>
+                        <div class="aui-flex-links">
+                            <a href="javascript:;" class="center" name="info-update-info"></a>
+                        </div>
+                    </form>
+                </div>
+				
+				<div class="aui-mon-list">
+					<a id="shareGrade" href="javascript:;" class="aui-flex b-line midle-height">
+						<div class="aui-flex-box ">
+							<p name="info-about-grade"></p>
+						</div>
+						<div class="aui-arrow">
+							<span></span>
+						</div>
+					</a>
+					<a id="shareInformation" href="javascript:;" class="aui-flex b-line midle-height">
+						<div class="aui-flex-box">
+							<p name="info-about-information"></p>
+						</div>
+						<div class="aui-arrow">
+							<span></span>
+						</div>
+					</a>
+					<a id="shareComplaint" href="javascript:;" class="aui-flex b-line midle-height">
+						<div class="aui-flex-box">
+							<p name="info-about-complaint"></p>
+						</div>
+						<div class="aui-arrow">
+							<span></span>
+						</div>
+					</a>
+				</div>
+				
+            </section>
+        </section>
+		</div>
+        <script type="text/javascript">
+            $('.aui-show').click(function() {
+                let pass_type = $('input.password').attr('type');
+
+                if (pass_type === 'password') {
+                    $('input.password').attr('type', 'text');
+                    $('.aui-show').removeClass('operate-eye-open').addClass('operate-eye-close');
+                } else {
+                    $('input.password').attr('type', 'password');
+                    $('.aui-show').removeClass('operate-eye-close').addClass('operate-eye-open');
+                }
+            })
+        </script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="about.js"></script>
+	
+    </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Change Binding</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link href="../../css/appr/style.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
+		<script src="../../js/i18n/jquery.json.min.js"></script>
+		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
+		<style>
+			.bg-img{
+				height: 31.25rem;
+				background-image: url('../../res/appr/background.png');
+				background-size:auto 31.25rem ;
+				z-index: 0;
+				
+			}
+			.bg-bottom{
+				position: absolute;
+				height:18.775rem;
+				width: 22.5rem;
+				background-color: #DEDCDC;
+				bottom: 0rem;
+				z-index: 999;
+				border-top-left-radius: 3.125rem;
+				border-top-right-radius: 3.125rem;
+			}
+			.aui-palace-grid-icon{
+				height: 3.63125rem;
+				width: 2.84375rem;
+			}
+			.aui-palace{
+				padding-top:2.25rem;
+			}
+			.aui-palace-grid-text{
+				color: #FFFFFF;
+				font-size: 0.9rem;
+				font-weight: bold;
+			}
+			.aui-palace-grid-title{
+				color: #FFFFFF;
+				font-size: 1.25rem;
+				font-weight: bold;
+				margin-left: 0.84375rem;
+				margin-top: 2.53125rem;
+			}
+			
+			.aui-palace-grid-header{
+				color: #FFFFFF;
+				font-size: 0.90rem;
+				font-weight: bold;
+				margin-left: 0.84375rem;
+				margin-top: 0.71875rem;
+				
+				
+			}
+			.btn-group-bg{
+				margin-top: 5.0375rem;
+			}
+			.bottomButton-left{
+				height: 3.125rem;
+				width: 11.78125rem;
+				border-radius: 0.9375rem;
+				margin-left: 2.03125rem;
+				font-size: 14.5px;
+				font-weight: bold;
+				background-color: #00C87B;
+				border:1px solid #00C87B ;
+				float: left;
+			}
+			.bottomButton-right{
+				height: 3.125rem;
+				width: 6.85625rem;
+				border-radius: 0.9375rem;
+				margin-left: 0.5rem;
+				font-size: 14.5px;
+				font-weight: bold;
+				background-color: #00C87B;
+				border:1px solid #00C87B ;
+				float: left;
+			}
+			
+			.aui-palace-grid-icon-cate{
+				width: 1.95rem;
+				height: 1.95rem;
+			}
+			.aui-palace-grid-text-cate{
+				font-size: 0.875rem;
+				color: #8a8a8a;
+			}
+			.aui-palace-grid-inner-title{
+				text-align: center;
+				font-size: 1.25rem;
+				font-weight: bold;
+			}
+			.select-forum{
+				height: 5.8625rem;
+				width: 100%;
+			
+			}
+			.bottom-bar{
+				height: 2.9375rem;
+				width: 100%;
+			
+			}
+			
+			.bottom-bar .innder{
+				background-color: #FFFFFF;
+				margin-left: 1.09375rem;
+				margin-right: 1.09375rem;
+				height: 100%;
+				margin-top: 0.34375rem;
+				border-radius: 0.9375rem;
+	
+			}
+			
+			.select-forum .innder{
+				background-color: red;
+				margin-left: 1.59375rem;
+				margin-right: 1.59375rem;
+				height: 100%;
+				margin-top: 1.90625rem;
+				border-radius: 0.9375rem;
+				background-image: url('../../res/appr/background.png');
+			}
+			.inner-name{
+				color: #FFFFFF;
+				font-size: 0.875rem;
+				font-weight: bold;
+				margin-left: 0.84375rem;
+				padding-top: 0.9375rem;
+			}
+			.box-shadow{
+			
+			  -moz-box-shadow:1px 2px 3px #dedcdc;
+			  -webkit-box-shadow:1px 2px 3px #dedcdc;
+			  box-shadow:2px 4.5px 9px #dedcdc;
+			
+			}
+			
+			
+		</style>
+	</head>
+	
+
+	<body>
+		
+		<div class="mui-content">
+			<div class="bg-img">
+				<div class="aui-palace aui-palace-two" style="position: relative;">
+					<a href="javascript:;" class="aui-palace-grid">
+						<div class="aui-palace-grid-icon">
+							<img src="../../res/appr/square.png" width="90%" alt="">
+						</div>
+						<div class="aui-palace-grid-text" name="info-appraisal-authe">
+							<h2></h2>
+						</div>
+					</a>
+					<a href="javascript:;" class="aui-palace-grid">
+						<div class="aui-palace-grid-icon">
+							<img src="../../res/appr/hot.png" alt="">
+						</div>
+						<div class="aui-palace-grid-text" name="info-appraisal-hot">
+						</div>
+					</a>
+				</div>
+				<div class="aui-palace-grid-title" name="info-appraisal-cure">
+				</div>
+				
+				<div class="aui-palace-grid-header" name="info-appraisal-quick">
+					
+				</div>
+				
+				<div class="btn-group-bg">
+					<button type="button" class="mui-btn mui-btn-danger bottomButton-left"  id="saveBtn" name="info-appraisal-button"></button>
+					<button type="button" class="mui-btn mui-btn-danger bottomButton-right"  id="saveBtn" >
+						<div name="info-appraisal-appointment"></div>
+						
+						<div >
+							<img src="../../res/appr/time.png" style="height: 15px;width: 15px; float: left;" />
+							<span name="info-appraisal-time" style="float: left; margin-left: 0.5rem;"></span>
+						</div>
+						
+					</button>
+					
+				</div>
+				
+				
+			</div>
+			<div class="bg-bottom">
+				<div class="aui-palace aui-palace-two" style="position: relative;padding-top: 1.25rem;">
+					<a href="javascript:;" class="aui-palace-grid" style="width: 33.33%;">
+						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+							<img src="../../res/appr/cate-pic.png" width="90%" alt="">
+						</div>
+						<div class="aui-palace-grid-text aui-palace-grid-text-cate" name="info-appraisal-select">
+							<h2></h2>
+						</div>
+					</a>
+					<a href="javascript:;" class="aui-palace-grid" style="width: 33.33%;">
+						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+							<img src="../../res/appr/photo-pic.png" alt="">
+						</div>
+						<div class="aui-palace-grid-text aui-palace-grid-text-cate" name="info-appraisal-film">
+						</div>
+					</a>
+					<a href="javascript:;" class="aui-palace-grid" style="width: 33.33%;">
+						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+							<img src="../../res/appr/issue-pic.png" alt="">
+						</div>
+						<div class="aui-palace-grid-text aui-palace-grid-text-cate" name="info-appraisal-await">
+						</div>
+					</a>
+				</div>
+				<div class="aui-palace-grid-inner-title" name="info-appraisal-form"></div>
+				<div class="select-forum">
+					<div class="innder">
+						<div class="inner-name" >
+							Name
+						</div>
+						<div class="inner-name" style="padding-top: 0px;">
+							early suyumn clothese
+						</div>
+						<div class="inner-name" style="padding-top: 0.5rem;width: 100%;bottom: ;">
+							<div style="width: 33.33%; float: left;">
+								<img src="../../res/appr/zan.png" style="width: 15px;height: 15px; float: left; "/>
+								<span style="margin-left: 0.625rem;">245</span> 
+							</div>
+							<div style="width: 33.33%;float: left;">
+								<img src="../../res/appr/message.png" style="margin-top: 0.1875rem;width: 15px;height: 13px; float: left; "/>
+								<span style="margin-left: 0.625rem;">2245</span> 
+							</div>
+							<div style="width: 33.33%;float: left;">
+								<img src="../../res/appr/watch.png" style="margin-top: 0.1875rem;width: 15px;height: 11px; float: left; "/>
+								<span style="margin-left: 0.625rem;">225245</span> 
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="bottom-bar ">
+					<div class="innder box-shadow" >
+						<div class="aui-palace aui-palace-two" style="position: relative; padding: 0rem;">
+							<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+								<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+									<img src="../../res/appr/first-icon.png" style="width:0.9375rem;height: 1.40625rem;margin-top: 0.5025rem ;" alt="">
+								</div>
+							</a>
+							<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+								<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+									<img src="../../res/appr/second-icon.png" style="width:1.15625rem;height: 1.375rem;margin-top: 0.5025rem ;" alt="">
+								</div>
+							</a>
+							<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+								<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+									<img src="../../res/appr/third-icon.png"  style="width:1.25rem;height: 1.4375rem;margin-top: 0.5025rem ;" alt="">
+								</div>
+							</a>
+							<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+								<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+									<img src="../../res/appr/fouth-icon.png"  style="width:1.375rem;height: 1.3125rem;margin-top: 0.5025rem ;" alt="">
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+					
+					
+				
+			</div>
+			
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="appraisal.js"></script>
+
+</html>

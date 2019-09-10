@@ -1,20 +1,49 @@
 mui.init({
-
+	
 });
 
 notification = {
-
 	// 事件注册
-	event: function() {},
-
+	event: function() {
+		$("#messageSwitch").addEventListener("toggle",function(event){
+			changeMessageNotification(event.detail.isActive)
+		});
+	},
 	service: {
-
+		//获取状态
+		getMessageNotification:function(status){
+			var data = {
+			};
+			apiHelper.get(CONSTANT.baseUrl + "" , data, function(flag, data) {
+				if(data.status == AJAX_SECCUSS) {
+					if(1==1){
+						$("#messageSwitch").addClass("mui-active");
+					}else{
+						$("#messageSwitch").removeClass("mui-active");
+					}
+				}
+			});
+		},
+		
+		//更改状态
+		changeMessageNotification:function(status){
+			var data = {
+			}
+			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
+				if(data.status == AJAX_SECCUSS) {
+				} else {
+					mui.toast(data.msg);
+				}
+			}, null, AJAX_BODY);
+		}
 	},
 	dao: {},
 	init: function() {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		notification.event();
+		
 	},
 }
 notification.init();

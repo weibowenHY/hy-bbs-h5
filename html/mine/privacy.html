@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Change Name</title>
+		<title>Privacy</title>
 		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
 		<meta content="yes" name="apple-mobile-web-app-capable" />
 		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -13,30 +13,85 @@
 		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
 		<script src="../../js/i18n/jquery.json.min.js"></script>
 		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
+		<script src="../../js/common/common.js"></script>
+		
+		
 		<style>
-			.aui-icon-list-area {
-				margin-top: 0px;
+			.right-button{
+				font-size: 17px;
+				
+			}
+			.aui-icon-list-area{
+				height: 3.15625rem;
+				margin-top: 2.1875rem;
+				background-color: #00c87b;
+				border-radius: 15px;
+				border-radius: 15px;
+				margin-left:0.4167em;
+				margin-right: 0.4167em;
 			}
 			
-			.aui-flex-srt {
-				width: 0px;
+			.next{
+				margin-top: 0.6875rem;
+			}
+			.aui-icon-list-area a{
+				height: 3.15625rem;
 			}
 			
-			.aui-flex-box {
-				font-size: 15px;
+			
+			.aui-flex-srt-word{
+				color: #FFFFFF;
+				font-weight: 500;
+				
 			}
 			
-			.line-top {
-				margin-top: 1em;
+			
+			
+			.title-label{
+				margin-left: 0.8333em;
+				margin-top: 3.25em;
+				font-size: 14px;
 			}
 			
-			.none-border {
-				border-radius: 0px;
-				background-color: #35304c;
-				border-color: #35304c;
-				line-height: 3;
+			.box-shadow{
+			  -moz-box-shadow:1px 2px 3px #dedcdc;
+			  -webkit-box-shadow:1px 2px 3px #dedcdc;
+			  box-shadow:2px 4.5px 9px #dedcdc;
 			}
+		
+			.aui-flex{
+				padding: 0.1667em;
+			}
+			
+			.aui-flex-srt-word-right {
+			    position: absolute;
+			    color:#FFFFFF;
+				font-weight: 500;
+				height: auto;
+				right: 0.1667em;
+				margin-right: 0.1667em;
+			}
+			
+			.mui-content,.aui-scrollView{
+				background-color: #FFFFFF;
+			}
+		
+			.aui-flex-box{
+				margin-left: 0.625em;
+			}
+			
+			.mui-switch-blue.mui-active{
+				    border: 1px solid #FFFFFF;
+				    background-color: #FFFFFF;
+			}
+			.mui-switch .mui-switch-handle{
+				background-color: #00c87b;
+				-webkit-box-shadow:none;
+				
+			}
+			
 		</style>
+		
 	</head>
 
 	<body>
@@ -46,37 +101,33 @@
 			<h1 class="mui-title" style="color: #000000;" name="info-privacy-title"></h1>
 		</header>
 		<div class="mui-content">
-			<section class="aui-scrollView">
-				<div class="aui-icon-list-area">
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-privacy-favolist">
-						</div>
-						<div class="mui-switch mui-switch-blue mui-switch-mini mui-active" data-switch="7">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-privacy-area">
-						</div>
-						<div class="mui-switch mui-switch-blue mui-switch-mini mui-active" data-switch="7">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-						</div>
-						<div class="aui-flex-box" name="info-privacy-gender">
-						</div>
-						<div class="mui-switch mui-switch-blue mui-switch-mini mui-active" data-switch="7">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</a>
-				</div>
-			</section>
+			<div class="aui-icon-list-area">
+				<a href="javascript:;" class="aui-flex " >
+					<div class="aui-flex-box" name="info-privacy-favolist">
+					</div>
+					<div id="favoSwitch" class="mui-switch mui-switch-mini mui-active">
+					  <div class="mui-switch-handle"></div>
+					</div>
+				</a>
+			</div>
+			<div class="aui-icon-list-area next">
+				<a href="javascript:;" class="aui-flex ">
+					<div class="aui-flex-box" name="info-privacy-area">
+					</div>
+					<div  id="areaSwitch" class="mui-switch mui-switch-mini mui-active">
+					  <div class="mui-switch-handle"></div>
+					</div>
+				</a>
+			</div>
+			<div class="aui-icon-list-area next">
+				<a href="javascript:;" class="aui-flex ">
+					<div class="aui-flex-box" name="info-privacy-gender">
+					</div>
+					<div  id="genderSwitch" class="mui-switch mui-switch-mini mui-active">
+					  <div class="mui-switch-handle"></div>
+					</div>
+				</a>
+			</div>
 		</div>
 	</body>
 	<script src="../../js/mui.min.js"></script>
