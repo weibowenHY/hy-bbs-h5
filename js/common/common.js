@@ -32,7 +32,7 @@ var CONSTANT = {
 	token: "token",
 	auth: "auth",
 
-	baseUrl: 'http://39.105.65.35:8082/papi',
+	baseUrl: 'http://localhost:8081',
 
 	pageSize: 10,
 	//订单列表显示5条

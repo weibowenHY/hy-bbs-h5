@@ -7,7 +7,7 @@ login = {
 	// 事件注册
 	event: function() {
 		
-		$("#loginBtn").on("click", login.service.doRegister);
+		$("#loginBtn").on("click", login.service.doLogin);
 		
 		$("#facebookBtn").on("click", login.service.doFacebook);
 		
@@ -20,8 +20,20 @@ login = {
 	
 	service: {
 		
-		doRegister:function(){
-			
+		doLogin:function(){
+			debugger;
+			var data = {
+				  "email": "314052187@qq.com",
+				  "password": "1qaz!QAZ",
+				  "username": "wbw",
+				  "verifycode": "1234"
+			}
+			apiHelper.post(CONSTANT.baseUrl + "/user/login", JSON.stringify(data), function(flag, data) {
+				if(data.status == AJAX_SECCUSS) {
+				} else {
+					mui.toast(data.msg);
+				}
+			}, null, AJAX_BODY);	
 		},
 		
 		doFacebook:function(){
