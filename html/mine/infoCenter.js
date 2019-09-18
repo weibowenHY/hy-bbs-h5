@@ -22,7 +22,6 @@ infoCenter = {
 infoCenter.init();
 
 function loadProperties(type) {
-	debugger;
 	jQuery.i18n.properties({
 		name: 'bbs', // 资源文件名称
 		path: '../../static/', // 资源文件所在目录路径
@@ -33,12 +32,12 @@ function loadProperties(type) {
 		callback: function() { // 回调方法    
 			$("[name='info-center-favorite']").html($.i18n.prop('info-center-favorite'));
 			$("[name='info-center-wallet']").html($.i18n.prop('info-center-wallet'));
-			$("[name='info-inv-gift']").html($.i18n.prop('info-inv-gift'));
-			$("[name='info-service']").html($.i18n.prop('info-service'));
-			$("[name='info-setting']").html($.i18n.prop('info-setting'));
-			$("[name='info-chat']").html($.i18n.prop('info-chat'));
-			$("[name='info-my-publish']").html($.i18n.prop('info-my-publish'));
-			$("[name='info-area']").html($.i18n.prop('info-area'));
+			$("[name='info-center-pill']").html($.i18n.prop('info-center-pill'));
+			$("[name='info-center-coupon']").html($.i18n.prop('info-center-coupon'));
+			$("[name='info-center-card']").html($.i18n.prop('info-center-card'));
+			$("[name='info-center-gift']").html($.i18n.prop('info-center-gift'));
+			$("[name='info-center-public']").html($.i18n.prop('info-center-public'));
+			$("[name='info-center-activity']").html($.i18n.prop('info-center-activity'));
 		}
 	});
 }

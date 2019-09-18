@@ -8,6 +8,10 @@
         <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
         <meta content="telephone=no" name="format-detection"/>
         <link href="../../css/infoCenter/style.css" rel="stylesheet" type="text/css"/>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
+		<script src="../../js/i18n/jquery.json.min.js"></script>
+		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
 		<style>
 				.bg-img{
 					height: 31.25rem;
@@ -163,8 +167,6 @@
 				}
 				.aui-icon-list-area a{
 					height:2.1875rem;
-				
-					
 				}
 				
 				.aui-flex-srt-word{
@@ -206,7 +208,7 @@
 				}
 				
 				.aui-inter-user-img img{
-					width: 80%;
+					width: 100%;
 					height: auto;
 					border-radius: 0px;
 				}
@@ -282,38 +284,74 @@
 						<div class="aui-flex-box" style="text-align: right;">
 								<h3 class="font-color">Personal Homepage ></h3>
 						</div>
-						
-					
-						
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
-			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
-				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+		
+		<div class="aui-icon-list-area box-shadow">
+			<a href="javascript:;" class="aui-flex">
+				<div class="aui-inter-user-img" style="margin-right: 0px;">
+					<img src="../../res/infoCenter/star.png" alt="" style="margin-left: 0.75rem;">
+				</div>
+				<div class="aui-flex-srt-word" name="info-center-favorite" style="padding: 0.1667em;padding-left: 1.5625rem">
+				</div>
 			</a>
 		</div>
-		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
-			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
-				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+		
+		<div class="aui-icon-list-area box-shadow" style="height: 4.4375rem;margin-top:1.5625rem">
+			<a href="javascript:;" class="aui-flex" style="height: 4.4375rem;">
+				<div class="aui-inter-user-img" style="margin-right: 0px;">
+					<img src="../../res/infoCenter/wallet.png" alt="" style="margin-left: 0.75rem;width: 50%;">
+				</div>
+				<div class="aui-flex-srt-word" name="info-center-wallet" style="padding: 0.1667em;padding-left: 1.5625rem;width: 20%;">
+				</div>
+				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
+					<div name="" >0.00</div>
+					<div name="info-center-pill" ></div>
+				</div>
+				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
+					<div name="" >0.00</div>
+					<div name="info-center-coupon" ></div>
+				</div>
+				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
+					<div name="" >0.00</div>
+					<div name="info-center-card" ></div>
+				</div>
 			</a>
 		</div>
-		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
-			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
-				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+		
+		
+		<div class="aui-icon-list-area box-shadow" style="margin-top: 1.5625rem;">
+			<a href="javascript:;" class="aui-flex">
+				<div class="aui-inter-user-img" style="margin-right: 0px;">
+					<img src="../../res/infoCenter/invitation.png" alt="" style="margin-left: 0.75rem;">
+				</div>
+				<div class="aui-flex-srt-word" name="info-center-gift" style="padding: 0.1667em;padding-left: 1.5625rem">
+				</div>
 			</a>
 		</div>
-		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
-			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
-				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+			
+		<div class="aui-icon-list-area box-shadow">
+			<a href="javascript:;" class="aui-flex">
+				<div class="aui-inter-user-img" style="margin-right: 0px;">
+					<img src="../../res/infoCenter/gift.png" alt="" style="margin-left: 0.75rem;">
+				</div>
+				<div class="aui-flex-srt-word" name="info-center-public" style="padding: 0.1667em;padding-left: 1.5625rem">
+				</div>
 			</a>
 		</div>
-		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
-			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
-				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+		
+		<div class="aui-icon-list-area box-shadow">
+			<a href="javascript:;" class="aui-flex">
+				<div class="aui-inter-user-img" style="margin-right: 0px;">
+					<img src="../../res/infoCenter/public.png" alt="" style="margin-left: 0.75rem;">
+				</div>
+				<div class="aui-flex-srt-word" name="info-center-activity" style="padding: 0.1667em;padding-left: 1.5625rem">
+				</div>
 			</a>
 		</div>
+	
    
 	
 		<div class="bottom-bar ">
@@ -343,7 +381,7 @@
 			</div>
 		</div>
 			
-		<script src="../js/mui.min.js"></script>
+		<script src="../../js/mui.min.js"></script>
 		<script src="infoCenter.js"></script>
 		
 	</body>
