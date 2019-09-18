@@ -15,23 +15,70 @@ login = {
 		
 		$("#twitterBtn").on("click", login.service.doTwitter);
 		
+		$("#signUpBtn").on("click", login.service.changeRegister);
+		
+		$("#forgetPassword").on("click", login.service.changePassword);
+		
+		
+		
+		
 	},
 
+	validate: function() {
+
+		var passwd = $("#password").val();
+		
+		if($("#userName").val() == "") {
+			mui.toast("please enter you email");
+			return false;
+		}
+		if($("#password").val() == "") {
+			mui.toast("you password is empty");
+			return false;
+		}
+		//		if($("#password").val().length < 8) {
+		//			mui.toast("密码位数至少8位哦！");
+		//			return false;
+		//		}
+		if($("#password").val().length > 16) {
+			mui.toast("please enter lease than 16 charactor");
+			return false;
+		}
+
+		return true;
+	},
 	
+
 	service: {
+		changePassword:function(){
+			window.location.href = "retrieve.html";
+		},
+		
+		changeRegister:function(){
+			window.location.href = "register.html";
+		},
 		
 		doLogin:function(){
+			if(login.validate() == false){
+				return;
+			}
+			
 			debugger;
 			var data = {
-				  "email": "314052187@qq.com",
-				  "password": "1qaz!QAZ",
-				  "username": "wbw",
-				  "verifycode": "1234"
+				  "email": $("#userName").val(),
+				  "password":  $("#password").val(),
+				  "verifycode": $("#code").val(),
 			}
 			apiHelper.post(CONSTANT.baseUrl + "/user/login", JSON.stringify(data), function(flag, data) {
 				if(data.status == AJAX_SECCUSS) {
+						mui.toast("login success");
+					  setTimeout(function() {  
+					        window.location.href = "pub/appraisal.html";
+					        localStorage.setItem("token",data.data);            
+						}, 1000)  
+					
 				} else {
-					mui.toast(data.msg);
+					mui.toast(data.error);
 				}
 			}, null, AJAX_BODY);	
 		},

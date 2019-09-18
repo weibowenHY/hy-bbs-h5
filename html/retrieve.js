@@ -6,15 +6,37 @@ retrieve = {
 
 	// 事件注册
 	event: function() {
-		$("#authBtn").on("click", retrieve.service.doAuth);
-	},
+		
 
+		$("#codeBtn").on("click", retrieve.service.changeCode);
+	
+		
+	},
+	
+	validate: function() {
+
+		
+		if($("#code").val() == "") {
+			mui.toast("please enter your code");
+			return false;
+		}
+		
+		return true;
+	},
 	
 	service: {
-		
-		doAuth:funtion(){
-			
+		changeCode:function(){
+			if(retrieve.validate() == false){
+				return;
+			}
+			mui.toast("auth success");
+			setTimeout(function() {
+					window.location.href = "enterPassword.html";  
+			}, 1000)  
+	
 		}
+		
+		
 	},
 	dao: {},
 	init: function() {

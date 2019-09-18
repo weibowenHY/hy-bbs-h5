@@ -1,4 +1,4 @@
-var AJAX_SECCUSS = 1;
+var AJAX_SECCUSS = 200;
 var AJAX_BODY = 'application/json';
 var AJAX_PARAM = 'application/x-www-form-urlencoded;charset=UTF-8'
 

@@ -59,7 +59,7 @@
                         <div class="aui-code-btn">
                             <div class="gradient-bg">
                             	<div >
-                            		<button type="button" class="mui-btn bottomButton btn-cus"  id="authBtn" name="info-retrieve-btn"></button>
+                            		<button type="button" class="mui-btn bottomButton btn-cus"  id="codeBtn" name="info-retrieve-btn"></button>
                             	</div>
                             </div>
                         </div>
@@ -71,19 +71,7 @@
             </section>
         </section>
 		</div>
-        <script type="text/javascript">
-            $('.aui-show').click(function() {
-                let pass_type = $('input.password').attr('type');
-
-                if (pass_type === 'password') {
-                    $('input.password').attr('type', 'text');
-                    $('.aui-show').removeClass('operate-eye-open').addClass('operate-eye-close');
-                } else {
-                    $('input.password').attr('type', 'password');
-                    $('.aui-show').removeClass('operate-eye-close').addClass('operate-eye-open');
-                }
-            })
-        </script>
+ 
 		<script src="../js/mui.min.js"></script>
 		<script src="retrieve.js"></script>
 	

@@ -66,6 +66,22 @@
 			.mui-segmented-control{
 				border-radius: 0.46875rem;
 			}
+			
+			.mui-segmented-control-app .mui-control-item {
+			    line-height: 38px;
+			    display: table-cell;
+			    overflow: hidden;
+			    width: 1%;
+			    -webkit-transition: background-color .1s linear;
+			    transition: background-color .1s linear;
+			    text-align: center;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    color: #000000;
+			    border-color: #00C87B;
+			    border-left: 1px solid #00C87B;
+			    font-weight: bold;
+			}
 		
 	   </style>
     </head>
@@ -74,16 +90,14 @@
    	<a class="mui-action-back mui-pull-left" style="color: #000000;padding: 15px;" name="info-cancel"></a>
 	<div class="top-tab-style">
 	  <div id="segmentedControl" class="mui-segmented-control">
-		<a class="mui-control-item mui-active" href="#item1" name="info-login">
+		<a class="mui-control-item mui-active"  name="info-login">
 		</a>
-		<a class="mui-control-item " href="#item2" name="info-signUp">
+		<a class="mui-control-item "name="info-signUp" id="signUpBtn">
 		</a>
 	  </div>
 	</div>
    </header>
 	  <div class="mui-content">
-        <section class="aui-flexView">
-            <section class="aui-scrollView">
                 <div class="aui-code-box">
                     <div class="aui-code-logo">
                         <div class="aui-code-logo-img">
@@ -114,7 +128,7 @@
                             </div>
                         </div>
                         <div class="aui-flex-links">
-                            <a href="javascript:;" class="forblack" name="info-login-user-psw"></a>
+                            <a id="forgetPassword" href="javascript:;" class="forblack" name="info-login-user-psw"></a>
 							<a href="javascript:;" class="forblack" name="info-login-unable"></a>
                         </div>
 						<div class="aui-login-armor">
@@ -131,8 +145,6 @@
 						
                     </form>
                 </div>
-            </section>
-        </section>
 		</div>
         <script type="text/javascript">
             $('.aui-show').click(function() {

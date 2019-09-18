@@ -1,158 +1,350 @@
 <!DOCTYPE html>
 <html>
-
-	<head>
-		<meta charset="UTF-8">
-		<title>个人中心</title>
-		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
-		<meta content="yes" name="apple-mobile-web-app-capable" />
-		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
-		<meta content="telephone=no" name="format-detection" />
-		<link href="../../css/mine/style.css" rel="stylesheet" type="text/css" />
-		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
-		<script src="../../js/i18n/jquery.json.min.js"></script>
-		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
-	</head>
-
-	<body>
-
-		<section class="aui-flexView">
-			<header class="aui-navBar aui-navBar-fixed">
-				<a href="javascript:;" class="aui-navBar-item">
-					<i class="icon icon-return"></i>
-				</a>
-				<div class="aui-center">
-					<span class="aui-center-title"></span>
-				</div>
-
-				<a href="javascript:;" class="aui-navBar-item">
-					<div class="aui-flex-srt">
-						<img src="../../res/mine/icon-in-003.png" alt="">
-					</div>
-				</a>
-				<a href="javascript:;" class="aui-navBar-item">
-					<div class="aui-flex-srt">
-						<img src="../../res/mine/icon-in-005.png" alt="">
-					</div>
-					<div class="aui-flex-srt">
-						<img src="../../res/mine/icon-in-004.png" alt="">
-					</div>
-				</a>
-			</header>
-			<section class="aui-scrollView">
-				<div class="aui-inter-user b-line">
+    <head>
+        <meta charset="UTF-8">
+        <title>个人中心</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <link href="../../css/infoCenter/style.css" rel="stylesheet" type="text/css"/>
+		<style>
+				.bg-img{
+					height: 31.25rem;
+					background-image: url('../../res/appr/background.png');
+					background-size:auto 31.25rem ;
+					z-index: 0;
+					
+				}
+				.bg-bottom{
+					position: absolute;
+					height:18.775rem;
+					width: 22.5rem;
+					background-color: #DEDCDC;
+					bottom: 0rem;
+					z-index: 999;
+					border-top-left-radius: 3.125rem;
+					border-top-right-radius: 3.125rem;
+				}
+				.aui-palace-grid-icon{
+					height: 3.63125rem;
+					width: 2.84375rem;
+				}
+				.aui-palace{
+					padding-top:2.25rem;
+				}
+				.aui-palace-grid-text{
+					color: #FFFFFF;
+					font-size: 0.9rem;
+					font-weight: bold;
+				}
+				.aui-palace-grid-title{
+					color: #FFFFFF;
+					font-size: 1.25rem;
+					font-weight: bold;
+					margin-left: 0.84375rem;
+					margin-top: 2.53125rem;
+				}
+				
+				.aui-palace-grid-header{
+					color: #FFFFFF;
+					font-size: 0.90rem;
+					font-weight: bold;
+					margin-left: 0.84375rem;
+					margin-top: 0.71875rem;
+					
+					
+				}
+				.btn-group-bg{
+					margin-top: 5.0375rem;
+				}
+				.bottomButton-left{
+					height: 3.125rem;
+					width: 11.78125rem;
+					border-radius: 0.9375rem;
+					margin-left: 2.03125rem;
+					font-size: 14.5px;
+					font-weight: bold;
+					background-color: #00C87B;
+					border:1px solid #00C87B ;
+					float: left;
+				}
+				.bottomButton-right{
+					height: 3.125rem;
+					width: 6.85625rem;
+					border-radius: 0.9375rem;
+					margin-left: 0.5rem;
+					font-size: 14.5px;
+					font-weight: bold;
+					background-color: #00C87B;
+					border:1px solid #00C87B ;
+					float: left;
+				}
+				
+				.aui-palace-grid-icon-cate{
+					width: 1.95rem;
+					height: 1.95rem;
+				}
+				.aui-palace-grid-text-cate{
+					font-size: 0.875rem;
+					color: #8a8a8a;
+				}
+				.aui-palace-grid-inner-title{
+					text-align: center;
+					font-size: 1.25rem;
+					font-weight: bold;
+				}
+				.select-forum{
+					height: 5.8625rem;
+					width: 100%;
+				
+				}
+				.bottom-bar{
+					height: 2.9375rem;
+					width: 100%;
+					position: absolute;
+					bottom: 1.25rem;
+				}
+				
+				.bottom-bar .innder{
+					background-color: #FFFFFF;
+					margin-left: 1.09375rem;
+					margin-right: 1.09375rem;
+					height: 100%;
+					margin-top: 0.34375rem;
+					border-radius: 0.9375rem;
+		
+				}
+				
+				.select-forum .innder{
+					background-color: red;
+					margin-left: 1.59375rem;
+					margin-right: 1.59375rem;
+					height: 100%;
+					margin-top: 1.90625rem;
+					border-radius: 0.9375rem;
+					background-image: url('../../res/appr/background.png');
+				}
+				.inner-name{
+					color: #FFFFFF;
+					font-size: 0.875rem;
+					font-weight: bold;
+					margin-left: 0.84375rem;
+					padding-top: 0.9375rem;
+				}
+				.box-shadow{
+				  -moz-box-shadow:1px 2px 3px #dedcdc;
+				  -webkit-box-shadow:1px 2px 3px #dedcdc;
+				  box-shadow:2px 4.5px 9px #dedcdc;
+				}
+				.font-color{
+					color: #FFFFFF;
+				}
+				
+			</style>
+		<style>
+				.right-button{
+					font-size: 17px;
+					
+				}
+				.aui-icon-list-area{
+					height: 4.1667em;
+					margin-top: 2.1875rem;
+					background-color: #00c87b;
+					border-radius: 13px;
+					margin-left:0.4167em;
+					margin-right: 0.4167em;
+				}
+				
+				.aui-icon-list-area{
+					height:2.1875rem;
+					margin-top: 1em;
+					
+				}
+				.aui-icon-list-area a{
+					height:2.1875rem;
+				
+					
+				}
+				
+				.aui-flex-srt-word{
+					color: #FFFFFF;
+					font-weight: bold;
+					font-size: 0.95625rem;
+					
+				}
+				
+				
+				.title-label{
+					margin-left: 0.8333em;
+					margin-top: 3.25em;
+					font-size: 14px;
+				}
+				
+				
+				
+				.box-shadow{  
+				  -moz-box-shadow:1px 2px 3px #dedcdc;
+				  -webkit-box-shadow:1px 2px 3px #dedcdc;
+				  box-shadow:2px 4.5px 9px #dedcdc;
+				}
+				.aui-flex{
+					padding: 0.1667em;
+				}
+				
+				.aui-flex-srt-word-right {
+				    position: absolute;
+				    color:#FFFFFF;
+					font-weight: bold;
+					height: auto;
+					right: 0.1667em;
+					margin-right: 0.1667em;
+				}
+				
+				.mui-content,.aui-scrollView{
+					background-color: #ffffff;
+				}
+				
+				.aui-inter-user-img img{
+					width: 80%;
+					height: auto;
+					border-radius: 0px;
+				}
+			
+				.aui-inter-user-img{
+					width:auto;
+					height: auto;
+					margin-left: 0.3rem;
+				}
+				
+				.aui-flex-arrow{
+					width: 100%;
+				}
+		
+		
+				.sheet-small{
+					height:2.1875rem;
+				}
+				
+				.aui-flex-srt-word{
+					width: 200%;
+				}
+				
+				.sheet-big{
+					margin-top: 2rem;
+					margin-bottom: 2rem;
+					height: 4.9375rem;
+				}
+				
+				.gradient-bg {
+					position: absolute;
+					bottom: 0;
+					margin-bottom: 0rem;
+					border-radius: 15px;
+					text-align: center;
+					
+				}
+				
+				.mui-btn-danger, .mui-btn-negative, .mui-btn-red{
+					background-color: #00C87B;
+					border: 1px solid #00C87B;
+				}
+				
+				.mui-btn,
+				button,
+				input[type=button],
+				input[type=reset],
+				input[type=submit] {
+					font-size:  0.95625rem;
+					border-radius: 15px;
+					height: 3rem;
+					margin-top: 5.175rem;
+				}
+			</style>
+		
+    </head>
+    <body>
+		<div class="aui-tour-content">
+			<a href="javascript:;" class="aui-navBar-item">
+				<i class="icon icon-return"></i>
+			</a>
+		</div>
+		<div class="aui-tour-box">
+			<div class="aui-tour-box-item">
+				<div class="aui-tour-layout">
 					<div class="aui-flex">
-						<div class="aui-inter-user-img">
-							<img src="../../res/mine/user-logo-005.png" alt="">
+						<div class="aui-flex-user">
+							<img src="../../res/infoCenter/pic-icon.png" alt="">
 						</div>
-						<div class="aui-flex-box">
-							<h2>MR.Wei</h2>
+						<div class="aui-flex-box" style="flex: 0.3;font-size: 1rem;">
+							<h3 class="font-color">Name</h3>
 						</div>
-
-						<div class="aui-flex-arrow"></div>
+						<div class="aui-flex-box" style="text-align: right;">
+								<h3 class="font-color">Personal Homepage ></h3>
+						</div>
+						
+					
+						
 					</div>
-
 				</div>
-				<div class="aui-icon-list">
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-001.png" alt="">
+			</div>
+		</div>
+		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
+			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+			</a>
+		</div>
+		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
+			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+			</a>
+		</div>
+		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
+			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+			</a>
+		</div>
+		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
+			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+			</a>
+		</div>
+		<div id="setting-message" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
+			<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
+				<div class="aui-flex-srt-word" name="info-settings-notifica" style="padding: 0.1667em;">Message Notifications</div>
+			</a>
+		</div>
+   
+	
+		<div class="bottom-bar ">
+			<div class="innder box-shadow" >
+				<div class="aui-palace aui-palace-two" style="position: relative; padding: 0rem;">
+					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+							<img src="../../res/appr/first-icon.png" style="width:0.9375rem;height: 1.40625rem;margin-top: 0.5025rem ;" alt="">
 						</div>
-						<div class="aui-flex-box" name="info-center-favorite">
-						</div>
-						<div class="aui-flex-arrow"></div>
 					</a>
-				</div>
-
-				<div class="aui-icon-list-area">
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-002.png" alt="">
+					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+							<img src="../../res/appr/second-icon.png" style="width:1.15625rem;height: 1.375rem;margin-top: 0.5025rem ;" alt="">
 						</div>
-						<div class="aui-flex-box" name="info-center-wallet">
-						</div>
-						<div class="aui-flex-arrow"></div>
 					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-003.png" alt="">
+					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+							<img src="../../res/appr/third-icon.png"  style="width:1.25rem;height: 1.4375rem;margin-top: 0.5025rem ;" alt="">
 						</div>
-						<div class="aui-flex-box" name="info-inv-gift">
-						</div>
-						<div class="aui-flex-arrow"></div>
 					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-004.png" alt="">
+					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
+						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
+							<img src="../../res/appr/fouth-icon.png"  style="width:1.375rem;height: 1.3125rem;margin-top: 0.5025rem ;" alt="">
 						</div>
-						<div class="aui-flex-box" name="info-service">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-005.png" alt="">
-						</div>
-						<div class="aui-flex-box" name="info-setting">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-006.png" alt="">
-						</div>
-						<div class="aui-flex-box" name="info-chat">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-007.png" alt="">
-						</div>
-						<div class="aui-flex-box" name="info-my-publish">
-						</div>
-						<div class="aui-flex-arrow"></div>
-					</a>
-					<a href="javascript:;" class="aui-flex b-line">
-						<div class="aui-flex-srt">
-							<img src="../../res/mine/icon-in-007.png" alt="">
-						</div>
-						<div class="aui-flex-box" name="info-area">
-						</div>
-						<div class="aui-flex-arrow"></div>
 					</a>
 				</div>
-			</section>
-			<footer class="aui-footer">
-				<a href="javascript:;" class="aui-tabBar-item">
-					<span class="aui-tabBar-item-icon">
-                        <i class="icon icon-home"></i>
-                    </span>
-					<!--<span class="aui-tabBar-item-text">商城</span>-->
-				</a>
-				<a href="javascript:;" class="aui-tabBar-item ">
-					<span class="aui-tabBar-item-icon">
-                        <i class="icon icon-loan"></i>
-                    </span>
-					<!--<span class="aui-tabBar-item-text">借款</span>-->
-				</a>
-				<a href="javascript:;" class="aui-tabBar-item">
-					<span class="aui-tabBar-item-icon">
-                        <i class="icon icon-find"></i>
-                    </span>
-					<!--<span class="aui-tabBar-item-text">汽车</span>-->
-				</a>
-				<a href="javascript:;" class="aui-tabBar-item aui-tabBar-item-active">
-					<span class="aui-tabBar-item-icon">
-                        <i class="icon icon-car"></i>
-                    </span>
-					<!--<span class="aui-tabBar-item-text">我的</span>-->
-				</a>
-			</footer>
-		</section>
-
+			</div>
+		</div>
+			
+		<script src="../js/mui.min.js"></script>
+		<script src="infoCenter.js"></script>
+		
 	</body>
-	<script src="../../js/mui.min.js"></script>
-	<script src="infoCenter.js"></script>
-
 </html>

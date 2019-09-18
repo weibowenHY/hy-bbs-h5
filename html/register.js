@@ -6,23 +6,68 @@ register = {
 
 	// 事件注册
 	event: function() {
-		$("#code").on("click", register.service.getCode);
+		//$("#code").on("click", register.service.getCode);
 		$("#registerBtn").on("click", register.service.doRegister);
+		$("#loginBtn").on("click", register.service.doLogin);
+		
 	},
+	
+	validate: function() {
 
+		var passwd = $("#password").val();
+		
+		if($("#userName").val() == "") {
+			mui.toast("please enter you email");
+			return false;
+		}
+		if($("#password").val() == "") {
+			mui.toast("you password is empty");
+			return false;
+		}
+		//		if($("#password").val().length < 8) {
+		//			mui.toast("密码位数至少8位哦！");
+		//			return false;
+		//		}
+		if($("#password").val().length > 16) {
+			mui.toast("please enter lease than 16 charactor");
+			return false;
+		}
+
+		return true;
+	},
 	
 	service: {
+		
+		doLogin:function(){
+			window.location.href = "login.html";
+		},
+		
 		getCode:function(){
 			alert("getCode");
 		},
 		
 		doRegister:function(){
-			var data = {
+			
+			if(register.validate() == false){
+				return;
 			}
-			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
+			
+			var data = {
+			  "email": $("#userName").val(),
+			  "password":$("#password").val(),
+			  "verifycode": $("#code").val(),
+			  "username": $("#userName").val(),
+			}
+			apiHelper.post(CONSTANT.baseUrl + "/user", JSON.stringify(data), function(flag, data) {
+				debugger
 				if(data.status == AJAX_SECCUSS) {
+					mui.toast("register success");
+					setTimeout(function() {
+					   	window.location.href = "login.html";       
+					}, 1000)  
+				
 				} else {
-					mui.toast(data.msg);
+					mui.toast(data.error);
 				}
 			}, null, AJAX_BODY);	
 		}

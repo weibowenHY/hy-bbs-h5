@@ -11,16 +11,29 @@ enterPassword = {
 		
 		
 	},
+	validate: function() {
 
+		
+		if($("#code").val() == "") {
+			mui.toast("please enter your code");
+			return false;
+		}
+		
+		return true;
+	},
 	
 	service: {
 		
+		
 		showCancle:function(){
+			window.location.href = "login.html";
 			
 		},
 		
 		doLogon:function(){
-			
+			if(retrieve.validate() == false){
+				return;
+			}
 		}
 		
 	},
