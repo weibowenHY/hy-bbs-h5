@@ -6,10 +6,28 @@ infoCenter = {
 
 	// 事件注册
 	event: function() {
+		$("#personnal-setting").on("click", infoCenter.service.changePersonnalSetting);
+		$("#changeFavorite").on("click", infoCenter.service.changeFavorite);
+		$("#changeWallet").on("click", infoCenter.service.changeWallet);
+		
+			
 	},
 
 	
 	service: {
+		
+		changePersonnalSetting:function(){
+			window.location.href = "settings.html";
+		},
+			
+		changeFavorite:function(){
+			window.location.href = "photo.html";
+		},
+		
+		changeWallet:function(){
+			window.location.href = "wallet.html";
+		},
+		
 		
 	},
 	dao: {},
@@ -17,6 +35,7 @@ infoCenter = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		infoCenter.event();
 	},
 }
 infoCenter.init();
