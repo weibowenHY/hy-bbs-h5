@@ -73,7 +73,7 @@ login = {
 				if(data.status == AJAX_SECCUSS) {
 						mui.toast("login success");
 					  setTimeout(function() {  
-					        window.location.href = "pub/appraisal.html";
+					        window.location.href = "mine/infoCenter.html";
 					        localStorage.setItem("token",data.data);            
 						}, 1000)  
 					
