@@ -62,7 +62,6 @@ login = {
 			if(login.validate() == false){
 				return;
 			}
-			
 			debugger;
 			var data = {
 				  "email": $("#userName").val(),
