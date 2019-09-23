@@ -2,19 +2,20 @@ mui.init({
 	
 });
 
+
 notification = {
 	// 事件注册
 	event: function() {
-		$("#messageSwitch").addEventListener("toggle",function(event){
-			changeMessageNotification(event.detail.isActive)
+		$("#messageSwitch").on("toggle",function(event){
+			notification.service.changeMessageNotification(event.detail.isActive);
 		});
 	},
 	service: {
 		//获取状态
 		getMessageNotification:function(status){
-			var data = {
+			var param = {
 			};
-			apiHelper.get(CONSTANT.baseUrl + "" , data, function(flag, data) {
+			/*apiHelper.get(CONSTANT.baseUrl + "/user" , data, function(flag, data) {
 				if(data.status == AJAX_SECCUSS) {
 					if(1==1){
 						$("#messageSwitch").addClass("mui-active");
@@ -22,19 +23,58 @@ notification = {
 						$("#messageSwitch").removeClass("mui-active");
 					}
 				}
+			});*/
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: param,
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						if(data.data.msgFlag==1){
+							$("#messageSwitch").addClass("mui-active");
+						}else{
+							$("#messageSwitch").removeClass("mui-active");
+						}
+					}else{
+						mui.toast(data.msg);
+					}
+				}
 			});
 		},
 		
 		//更改状态
 		changeMessageNotification:function(status){
-			var data = {
+			var stausFlag;
+			if (status) {
+				stausFlag = 1;
+			} else{
+				stausFlag = 0;
 			}
-			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
+			var param = {
+				
+			}
+			/*apiHelper.post(CONSTANT.baseUrl + "/user", JSON.stringify(data), function(flag, data) {
 				if(data.status == AJAX_SECCUSS) {
 				} else {
 					mui.toast(data.msg);
 				}
-			}, null, AJAX_BODY);
+			}, null, AJAX_BODY);*/
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token + "?msgFlag=" + stausFlag,
+				type: "put",
+				contentType: "application/json",
+				data: param,
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						mui.toast("success");
+					} else {
+						mui.toast(data.msg);
+					}
+				}
+			});
 		}
 	},
 	dao: {},
@@ -43,7 +83,7 @@ notification = {
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 		notification.event();
-		
+		notification.service.getMessageNotification();
 	},
 }
 notification.init();

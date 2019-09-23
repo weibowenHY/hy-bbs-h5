@@ -6,23 +6,23 @@ privacy = {
 
 	// 事件注册
 	event: function() {
-		$("#favoSwitch").addEventListener("toggle",function(event){
-			changeMessageFavo(event.detail.isActive)
+		$("#favoSwitch").on("toggle",function(event){
+			privacy.service.changeMessageFavo(event.detail.isActive)
 		});
-		$("#areaSwitch").addEventListener("toggle",function(event){
-			changeMessageArea(event.detail.isActive)
+		$("#areaSwitch").on("toggle",function(event){
+			privacy.service.changeMessageArea(event.detail.isActive)
 		});
-		$("#genderSwitch").addEventListener("toggle",function(event){
-			changeMessageGender(event.detail.isActive)
+		$("#genderSwitch").on("toggle",function(event){
+			privacy.service.changeMessageGender(event.detail.isActive)
 		});
 	},
 
 	service: {
 		
-		getMessageFavo:function(status){
-			var data = {
+		getMessageAll:function(status){
+			var param = {
 			};
-			apiHelper.get(CONSTANT.baseUrl + "" , data, function(flag, data) {
+			/*apiHelper.get(CONSTANT.baseUrl + "" , data, function(flag, data) {
 				if(data.status == AJAX_SECCUSS) {
 					if(1==1){
 						$("#messageSwitch").addClass("mui-active");
@@ -30,68 +30,80 @@ privacy = {
 						$("#messageSwitch").removeClass("mui-active");
 					}
 				}
-			});
-		},
-		
-		getMessageArea:function(status){
-			var data = {
-			};
-			apiHelper.get(CONSTANT.baseUrl + "" , data, function(flag, data) {
-				if(data.status == AJAX_SECCUSS) {
-					if(1==1){
-						$("#messageSwitch").addClass("mui-active");
+			});*/
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: param,
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						/*喜欢列表*/
+						if(data.data.lkeListsFlag==1){
+							$("#favoSwitch").addClass("mui-active");
+						}else{
+							$("#favoSwitch").removeClass("mui-active");
+						}
+						/*地区*/
+						if(data.data.countryFlag==1){
+							$("#areaSwitch").addClass("mui-active");
+						}else{
+							$("#areaSwitch").removeClass("mui-active");
+						}
+						/*性别*/
+						if(data.data.sexFlag==1){
+							$("#genderSwitch").addClass("mui-active");
+						}else{
+							$("#genderSwitch").removeClass("mui-active");
+						}
 					}else{
-						$("#messageSwitch").removeClass("mui-active");
-					}
-				}
-			});
-		},
-		
-		getMessageGender:function(status){
-			var data = {
-			};
-			apiHelper.get(CONSTANT.baseUrl + "" , data, function(flag, data) {
-				if(data.status == AJAX_SECCUSS) {
-					if(1==1){
-						$("#messageSwitch").addClass("mui-active");
-					}else{
-						$("#messageSwitch").removeClass("mui-active");
+						mui.toast(data.msg);
 					}
 				}
 			});
 		},
 		
 		changeMessageFavo:function(status){
-			var data = {
+			var stausFlag;
+			if (status) {
+				stausFlag = 1;
+			} else{
+				stausFlag = 0;
 			}
-			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
-				if(data.status == AJAX_SECCUSS) {
-				} else {
-					mui.toast(data.msg);
-				}
-			}, null, AJAX_BODY);
+			var param ={
+				"query":"?lkeListsFlag=",
+				"stausFlag":stausFlag
+			}
+			cheangeUser(param);
 		},
 		
 		changeMessageArea:function(status){
-			var data = {
+			var stausFlag;
+			if (status) {
+				stausFlag = 1;
+			} else{
+				stausFlag = 0;
 			}
-			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
-				if(data.status == AJAX_SECCUSS) {
-				} else {
-					mui.toast(data.msg);
-				}
-			}, null, AJAX_BODY);
+			var param ={
+				"query":"?countryFlag=",
+				"stausFlag":stausFlag
+			}
+			cheangeUser(param);
 		},
 		
 		changeMessageGender:function(status){
-			var data = {
+			var stausFlag;
+			if (status) {
+				stausFlag = 1;
+			} else{
+				stausFlag = 0;
 			}
-			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
-				if(data.status == AJAX_SECCUSS) {
-				} else {
-					mui.toast(data.msg);
-				}
-			}, null, AJAX_BODY);
+			var param ={
+				"query":"?sexFlag=",
+				"stausFlag":stausFlag
+			}
+			cheangeUser(param);
 		}
 		
 		
@@ -102,6 +114,7 @@ privacy = {
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 		privacy.event();
+		privacy.service.getMessageAll();
 	},
 }
 privacy.init();
@@ -121,6 +134,23 @@ function loadProperties(type) {
 			$("[name='info-privacy-area']").html($.i18n.prop('info-privacy-area'));
 			$("[name='info-privacy-gender']").html($.i18n.prop('info-privacy-gender'));
 
+		}
+	});
+}
+
+function cheangeUser(data){
+	$.ajax({
+		url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token + data.query +data.stausFlag,
+		type: "put",
+		contentType: "application/json",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			if(data.status == AJAX_SECCUSS) {
+				mui.toast("success");
+			} else {
+				mui.toast(data.msg);
+			}
 		}
 	});
 }

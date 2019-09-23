@@ -27,6 +27,9 @@ var ORDER_TOTAL = 1;
 var ORDER_T = 2;
 var ORDER_U = 3;
 
+var TOKEN_REL = {
+	token:localStorage.getItem("token")
+};
 
 var CONSTANT = {
 	token: "token",
