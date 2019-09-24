@@ -9,6 +9,7 @@ infoCenter = {
 		$("#personnal-setting").on("click", infoCenter.service.changePersonnalSetting);
 		$("#changeFavorite").on("click", infoCenter.service.changeFavorite);
 		$("#changeWallet").on("click", infoCenter.service.changeWallet);
+		$("#inviteGift").on("click", infoCenter.service.changeGift);
 		
 			
 	},
@@ -27,7 +28,9 @@ infoCenter = {
 		changeWallet:function(){
 			window.location.href = "wallet.html";
 		},
-		
+		changeGift:function(){
+			window.location.href = "inviteGift.html";
+		}
 		
 	},
 	dao: {},
