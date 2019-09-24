@@ -2,33 +2,29 @@ mui.init({
 
 });
 
-gender = {
+inviteGift = {
 
 	// 事件注册
 	event: function() {
-		$("#male-btn").on("click", gender.service.maleCheck);
-		$("#female-btn").on("click", gender.service.femaleCheck);
+
+		
 	},
 
+	
 	service: {
-		maleCheck:function(){
-			$("#mCheck").show();
-			$("#fCheck").hide();
-		},
-		femaleCheck:function(){
-			$("#mCheck").hide();
-			$("#fCheck").show();
-		}
+		
+	
+		
 	},
 	dao: {},
 	init: function() {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
-		gender.event();
+		inviteGift.event();
 	},
 }
-gender.init();
+inviteGift.init();
 
 function loadProperties(type) {
 	jQuery.i18n.properties({
@@ -39,10 +35,12 @@ function loadProperties(type) {
 		cache: false,
 		encoding: 'UTF-8',
 		callback: function() { // 回调方法    
-			$("[name='info-gender-title']").html($.i18n.prop('info-gender-title'));
-			$("[name='info-gender-male']").html($.i18n.prop('info-gender-male'));
-			$("[name='info-gender-female']").html($.i18n.prop('info-gender-female'));
-
+			$("[name='info-gift-tile']").html($.i18n.prop('info-gift-tile'));
+			 $("[name='info-gift-ask']").html($.i18n.prop('info-gift-ask'));
+			 $("[name='info-gift-record']").html($.i18n.prop('info-gift-record'));
+			 $("[name='info-gift-frieds']").html($.i18n.prop('info-gift-frieds'));
+			 $("[name='info-gift-buttom']").html($.i18n.prop('info-gift-buttom'));
+			 
 		}
 	});
 }

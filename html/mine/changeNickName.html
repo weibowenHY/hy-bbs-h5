@@ -19,21 +19,21 @@
 				
 			}
 			.aui-icon-list-area{
-				height: 6.25em;
+				height: 4.34375rem;
 				margin-top: 1.2333em;
 				background-color: #00c87b;
-				border-radius: 25px;
+				border-radius: 0.9375rem;
 				margin-left:0.4167em;
 				margin-right: 0.4167em;
 			}
 			
 			.aui-icon-list-area a{
-				height: 6.25em;
+				height: 4.34375rem;
 			
 				
 			}
 			.aui-icon-list-area a{
-				height: 6.25em;
+				height: 4.34375rem;
 			
 				
 			}
@@ -78,13 +78,17 @@
 			.mui-content,.aui-scrollView{
 				background-color: #FFFFFF;
 			}
+			.input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+				background-color: #00C87B;
+				text-align: right;
+			}
 		</style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav aui-header ">
 			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #000000;"></a>
 			<h1 class="mui-title" style="color: #000000;" name="info-nickName-title"></h1>
-			<button class="mui-btn  mui-btn-link mui-pull-right right-button" name="info-save" style="font-size: 17px; color:#8ED5AB;font-weight:500"></button>
+			<button id="info-save-btn" class="mui-btn  mui-btn-link mui-pull-right right-button" name="info-save" style="font-size: 17px; color:#8ED5AB;font-weight:500"></button>
 		</header>
 		<div class="mui-content">
 			<div class="aui-icon-list-area box-shadow">
@@ -92,6 +96,7 @@
 					<div class="aui-flex-srt-word" name="info-name" style="padding: 0.1667em;">
 					</div>
 					<div class="aui-flex-srt-word-right" name="info-get-verification-code">
+						<input type="text" class="aui-code-line-input" id="userName" autocomplete="off" value="name" />
 					</div>
 				</a>
 			</div>

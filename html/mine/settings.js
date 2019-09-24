@@ -13,7 +13,6 @@ settings = {
 		$("#setting-about").on("click", settings.service.showAbout);
 		$("#logout-btn").on("click", settings.service.logout);
 		
-		
 	},
 	
 	service: {

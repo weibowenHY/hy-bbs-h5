@@ -6,17 +6,22 @@ changeNickName = {
 
 	// 事件注册
 	event: function() {
+		$("#info-save-btn").on("click", changeNickName.service.infoSave);
+		
 	},
 
 	
 	service: {
-		
+		infoSave:function(){
+			
+		}
 	},
 	dao: {},
 	init: function() {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		changeNickName.event();
 	},
 }
 changeNickName.init();

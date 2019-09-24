@@ -17,7 +17,7 @@ infoCenter = {
 	service: {
 		
 		changePersonnalSetting:function(){
-			window.location.href = "settings.html";
+			window.location.href = "infoEdit.html";
 		},
 			
 		changeFavorite:function(){
