@@ -19,21 +19,21 @@
 				
 			}
 			.aui-icon-list-area{
-				height: 6.25em;
+				height: 3.71875rem;
 				margin-top: 1.2333em;
 				background-color: #00c87b;
-				border-radius: 25px;
+				border-radius: 15px;
 				margin-left:0.4167em;
 				margin-right: 0.4167em;
 			}
 			
 			.aui-icon-list-area a{
-				height: 6.25em;
+				height: 3.71875rem;
 			
 				
 			}
 			.aui-icon-list-area a{
-				height: 6.25em;
+				height: 3.71875rem;
 			
 				
 			}
@@ -52,16 +52,11 @@
 			}
 			
 			.box-shadow{
-				box-shadow:-moz-box-shadow:3px 4px 13px #333333; -webkit-box-shadow:3px 4px 13px #333333; box-shadow:3px 4px 13px #333333;
+			  -moz-box-shadow:1px 2px 3px #dedcdc;
+			  -webkit-box-shadow:1px 2px 3px #dedcdc;
+			  box-shadow:2px 4.5px 9px #dedcdc;
 			}
 			
-			.box-shadow{  
-
-			  -moz-box-shadow:2px 3px 10px #333333; 
-			  -webkit-box-shadow:2px 3px 10px #333333; 
-			  box-shadow:2px 3px 10px #333333;
-
-			}
 			.aui-flex{
 				padding: 0.1667em;
 			}
@@ -73,10 +68,15 @@
 				height: auto;
 				right: 0.1667em;
 				margin-right: 0.1667em;
+				width: 30%;
 			}
 			
 			.mui-content,.aui-scrollView{
 				background-color: #FFFFFF;
+			}
+			.input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+				background-color: #00C87B;
+				text-align: right;
 			}
 		</style>
 	</head>
@@ -92,6 +92,7 @@
 					<div class="aui-flex-srt-word" name="info-withdraw-original" style="padding: 0.1667em;">
 					</div>
 					<div class="aui-flex-srt-word-right" name="info-get-verification-code">
+						<input type="text" class="aui-code-line-input" id="orgPsw" autocomplete="off" value="name" />
 					</div>
 				</a>
 			</div>
@@ -100,6 +101,7 @@
 					<div class="aui-flex-srt-word" name="info-withdraw-newpsw" style="padding: 0.1667em;">
 					</div>
 					<div class="aui-flex-srt-word-right" name="info-get-verification-code">
+						<input type="text" class="aui-code-line-input" id="newPsw" autocomplete="off" value="name" />
 					</div>
 				</a>
 			</div>
@@ -108,6 +110,7 @@
 					<div class="aui-flex-srt-word" name="info-withdraw-Determine" style="padding: 0.1667em;">
 					</div>
 					<div class="aui-flex-srt-word-right" name="info-get-verification-code">
+						<input type="text" class="aui-code-line-input" id="deterPsw" autocomplete="off" value="name" />
 					</div>
 				</a>
 			</div>

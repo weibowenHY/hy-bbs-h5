@@ -2,14 +2,21 @@ mui.init({
 
 });
 
-countryChoose = {
+classify = {
 
 	// 事件注册
 	event: function() {
+		
+		$("#shoesBtn").on("click", classify.service.ChangeShoes);
+
 	},
 
-	
 	service: {
+
+			ChangeShoes:function(){
+				window.location.href = "shoes.html";
+			},
+	
 		
 	},
 	dao: {},
@@ -17,9 +24,10 @@ countryChoose = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		classify.event();
 	},
 }
-countryChoose.init();
+classify.init();
 
 function loadProperties(type) {
 	jQuery.i18n.properties({

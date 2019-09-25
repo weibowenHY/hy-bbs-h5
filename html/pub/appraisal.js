@@ -6,10 +6,28 @@ appraisal = {
 
 	// 事件注册
 	event: function() {
+		
+		$("#pointTimeBtn").on("click", appraisal.service.Changepoint);
+		
+		$("#indenBtn").on("click", appraisal.service.ChangeIden);
+		
+		$("#hotBtn").on("click", appraisal.service.changeHot);
+		
+		
+		
 	},
 
 	
 	service: {
+		Changepoint:function(){
+			window.location.href = "reserve.html";
+		},
+		ChangeIden:function(){
+			window.location.href = "classify.html";
+		},
+		changeHot:function(){
+			window.location.href = "pubAuth.html";
+		}
 		
 	},
 	dao: {},
@@ -17,6 +35,7 @@ appraisal = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		appraisal.event()
 	},
 }
 appraisal.init();

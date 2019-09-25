@@ -6,17 +6,22 @@ security = {
 
 	// 事件注册
 	event: function() {
+		$("#withdrawBtn").on("click", security.service.ChangeWithDraw);
 	},
 
 	
 	service: {
-		
+		ChangeWithDraw:function(){
+			window.location.href = "withdrawPsw.html";
+			
+		}
 	},
 	dao: {},
 	init: function() {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		security.event();
 	},
 }
 security.init();

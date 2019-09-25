@@ -11,6 +11,9 @@ infoCenter = {
 		$("#changeWallet").on("click", infoCenter.service.changeWallet);
 		$("#inviteGift").on("click", infoCenter.service.changeGift);
 		
+		$("#pubBtn").on("click", infoCenter.service.changePub);
+		
+		
 			
 	},
 
@@ -30,7 +33,11 @@ infoCenter = {
 		},
 		changeGift:function(){
 			window.location.href = "inviteGift.html";
+		},
+		changePub:function(){
+			window.location.href = "../pub/appraisal.html";
 		}
+		
 		
 	},
 	dao: {},
