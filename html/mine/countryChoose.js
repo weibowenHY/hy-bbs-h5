@@ -6,6 +6,7 @@ countryChoose = {
 
 	// 事件注册
 	event: function() {
+		
 	},
 
 	

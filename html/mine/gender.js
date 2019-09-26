@@ -11,13 +11,50 @@ gender = {
 	},
 
 	service: {
+		/*
+		 *  1:男      
+		 *  0:女
+		 * 
+		 * */
+		getGender:function(){
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						if (data.data.sex == 1) {
+							$("#mCheck").show();
+							$("#fCheck").hide();
+						}else {
+							$("#mCheck").hide();
+							$("#fCheck").show();
+						}
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+		},
 		maleCheck:function(){
 			$("#mCheck").show();
 			$("#fCheck").hide();
+			var param ={
+				"query":"?sex=",
+				"stausFlag":1
+			}
+			cheangeUser(param);
 		},
 		femaleCheck:function(){
 			$("#mCheck").hide();
 			$("#fCheck").show();
+			var param ={
+				"query":"?sex=",
+				"stausFlag":0
+			}
+			cheangeUser(param);
 		}
 	},
 	dao: {},
@@ -26,6 +63,7 @@ gender = {
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 		gender.event();
+		gender.service.getGender();
 	},
 }
 gender.init();
@@ -43,6 +81,22 @@ function loadProperties(type) {
 			$("[name='info-gender-male']").html($.i18n.prop('info-gender-male'));
 			$("[name='info-gender-female']").html($.i18n.prop('info-gender-female'));
 
+		}
+	});
+}
+function cheangeUser(data){
+	$.ajax({
+		url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token + data.query +data.stausFlag,
+		type: "put",
+		contentType: "application/json",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			if(data.status == AJAX_SECCUSS) {
+				mui.toast("success");
+			} else {
+				mui.toast(data.msg);
+			}
 		}
 	});
 }

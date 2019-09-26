@@ -33,14 +33,21 @@ settings = {
 			window.location.href = "about.html";
 		},
 		logout:function(){
-			var data = {
-			}
-			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
-				if(data.status == AJAX_SECCUSS) {
-				} else {
-					mui.toast(data.msg);
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/logout/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						mui.toast("success");
+						window.location.href = "../login.html"
+					}else{
+						mui.toast(data.error);
+					}
 				}
-			}, null, AJAX_BODY);
+			});
 		},
 		
 		

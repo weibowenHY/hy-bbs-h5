@@ -6,13 +6,48 @@ changeNickName = {
 
 	// 事件注册
 	event: function() {
-		$("#info-save-btn").on("click", changeNickName.service.infoSave);
+		$("#info-save-btn").on("click", changeNickName.service.chengeInfo);
 		
 	},
 
 	
 	service: {
 		infoSave:function(){
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						$('#userName').val(data.data.username);
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+		},
+		chengeInfo:function(){
+			var userName = $('#userName').val();
+			if (userName) {
+				$.ajax({
+					url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token + "?username=" + userName,
+					type: "put",
+					contentType: "application/json",
+					data: {},
+					dataType: 'json',
+					success: function(data) {
+						if(data.status == AJAX_SECCUSS) {
+							mui.toast("success");
+						} else {
+							mui.toast(data.error);
+						}
+					}
+				});
+			} else{
+				mui.toast("please enter your name");
+			}
 			
 		}
 	},
@@ -22,6 +57,7 @@ changeNickName = {
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 		changeNickName.event();
+		changeNickName.service.infoSave();
 	},
 }
 changeNickName.init();

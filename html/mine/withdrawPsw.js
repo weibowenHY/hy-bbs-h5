@@ -6,17 +6,52 @@ withdrawPsw = {
 
 	// 事件注册
 	event: function() {
+		$('#changePwdBtn').on('click',withdrawPsw.service.changePwd);
 	},
 
 	
 	service: {
-		
+		changePwd:function(){
+			var oldpwd = $('#orgPsw').val();
+			var newpwd = $('#newPsw').val();
+			var deterPsw = $('#deterPsw').val();
+			if (!oldpwd) {
+				mui.toast("please enter the original password");
+			}else if(!newpwd){
+				mui.toast("please enter new password");
+			}else if(!deterPsw){
+				mui.toast("please enter determine new password");
+			}else if(newpwd != deterPsw){
+				mui.toast("your determine new password not equal to new passworld");
+			}else{
+				$.ajax({
+					url: CONSTANT.baseUrl + "/user/password/" + TOKEN_REL.token + "?newpsd=" + newpwd + "&oldpsd" + oldpwd,
+					type: "put",
+					contentType: "application/json",
+					data: {},
+					dataType: 'json',
+					success: function(data) {
+						if(data.status == AJAX_SECCUSS) {
+							mui.toast("success");
+							$('#orgPsw').val("");
+							$('#newPsw').val("");
+							$('#deterPsw').val("");
+						} else {
+							mui.toast(data.error);
+						}
+					}
+				});
+			}
+			
+			
+		}
 	},
 	dao: {},
 	init: function() {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		withdrawPsw.event();
 	},
 }
 withdrawPsw.init();

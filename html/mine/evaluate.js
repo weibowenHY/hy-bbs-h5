@@ -13,14 +13,36 @@ evaluate = {
 	service: {
 		
 		sendMessage:function(){
-			var data = {
-			}
-			apiHelper.post(CONSTANT.baseUrl + "", JSON.stringify(data), function(flag, data) {
-				if(data.status == AJAX_SECCUSS) {
-				} else {
-					mui.toast(data.msg);
+			var complaint = $('#complaint').val();
+			if (complaint) {
+				var param = {
+					"answer": null,
+					"content": complaint,
+					"createTime": null,
+					"id": null,
+					"isRead": null,
+					"userId": null
 				}
-			}, null, AJAX_BODY);
+				$.ajax({
+					url: CONSTANT.baseUrl + "/complaint/add/" + TOKEN_REL.token,
+					type: "post",
+					contentType: "application/json",
+					data: JSON.stringify(param),
+					dataType: 'json',
+					success: function(data) {
+						if(data.status == AJAX_SECCUSS) {
+							mui.toast("success");
+							$('#complaint').val("");
+						} else {
+							mui.toast(data.error);
+						}
+					}
+				});
+			} else{
+				mui.toast("please describe your questions");
+			}
+			
+			
 		}
 		
 	},
