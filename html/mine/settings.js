@@ -12,6 +12,8 @@ settings = {
 		$("#setting-feedback").on("click", settings.service.showFeedback);
 		$("#setting-about").on("click", settings.service.showAbout);
 		$("#logout-btn").on("click", settings.service.logout);
+		$("#updateBtn").on("click", settings.service.changeUpdate);
+		
 		
 	},
 	
@@ -31,6 +33,9 @@ settings = {
 		},
 		showAbout:function(){
 			window.location.href = "about.html";
+		},
+		changeUpdate:function(){
+			window.location.href = "../update.html";
 		},
 		logout:function(){
 			var data = {

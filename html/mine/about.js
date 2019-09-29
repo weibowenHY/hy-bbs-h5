@@ -23,15 +23,15 @@ about = {
 			
 		},
 		shareGrade:function(){
-			window.location.href = "notification.html";
+			window.location.href = "componyInfo.html";
 			
 		},
 		shareInformation:function(){
-			window.location.href = "notification.html";
+			window.location.href = "componyInfo.html";
 			
 		},
 		shareComplaint:function(){
-			window.location.href = "notification.html";
+			window.location.href = "componyInfo.html";
 			
 		}
 		

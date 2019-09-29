@@ -9,10 +9,10 @@ infoCenter = {
 		$("#personnal-setting").on("click", infoCenter.service.changePersonnalSetting);
 		$("#changeFavorite").on("click", infoCenter.service.changeFavorite);
 		$("#changeWallet").on("click", infoCenter.service.changeWallet);
-		$("#inviteGift").on("click", infoCenter.service.changeGift);
 		
 		$("#pubBtn").on("click", infoCenter.service.changePub);
 		
+		$("#infoGiftBtn").on("click", infoCenter.service.changeGift);
 		
 			
 	},
@@ -21,7 +21,7 @@ infoCenter = {
 	service: {
 		
 		changePersonnalSetting:function(){
-			window.location.href = "infoEdit.html";
+			window.location.href = "centerInfo.html";
 		},
 			
 		changeFavorite:function(){
@@ -36,7 +36,8 @@ infoCenter = {
 		},
 		changePub:function(){
 			window.location.href = "../pub/appraisal.html";
-		}
+		},
+		
 		
 		
 	},

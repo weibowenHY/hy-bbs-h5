@@ -143,6 +143,7 @@
 				}
 				.font-color{
 					color: #FFFFFF;
+					font-size: 1rem;
 				}
 				
 			</style>
@@ -154,10 +155,10 @@
 				.aui-icon-list-area{
 					height: 4.1667em;
 					margin-top: 2.1875rem;
-					background-color: #00c87b;
-					border-radius: 13px;
 					margin-left:0.4167em;
 					margin-right: 0.4167em;
+					font-weight: bold;
+					font-size: 1.25rem;
 				}
 				
 				.aui-icon-list-area{
@@ -247,11 +248,60 @@
 					
 				}
 				
+				.aui-tour-content{
+					background-image: url(../../res/personal/personal-img.png);
+					height: 16.0625rem
+				}
+				.aui-tour-box{
+					margin-top: -13.5rem;
+				}
+				.top-buttom{
+					background-color: #FFFFFF;
+					color: #000000;
+					border-radius: 0.9375rem;3					border: 1px solid #FFFFFF;
+					font-weight:bold;
+					font-size: 0.875rem;
+				}
+				.aui-flex-user{
+					text-align: center;
+				}
+				.mui-btn, button, input[type=button], input[type=reset], input[type=submit]{
+					border:none;
+				}
+				
+				body{
+					background-color: #FFFFFF;
+				}
+				
+				.padding-lr{
+					padding-left: 7.5rem;
+					padding-right: 7.5rem;
+					margin-top:1.40625rem;
+				}
+				
+				.photo-bg{
+				
+					height: 8.75rem;
+					background-color: #DCDCDC; 
+					
+					border-radius: 0.9375rem;
+					text-align: center;
+					display:table-cell;
+					vertical-align:middle;
+					
+				}
+				.mui-bar {
+				    background: none;
+				}
 			</style>
 		
     </head>
     <body>
-		<div class="aui-tour-content">
+		<header class="mui-bar mui-bar-nav aui-header ">
+			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #FFFFFF;"></a>
+			<h1 class="mui-title" style="color: #FFFFFF;" name="info-chat-title"></h1>
+		</header>
+		<div class="aui-tour-content box-shadow">
 			<a href="javascript:;" class="aui-navBar-item">
 				<i class="icon icon-return"></i>
 			</a>
@@ -262,112 +312,65 @@
 					<div class="aui-flex">
 						<div class="aui-flex-user">
 							<img src="../../res/infoCenter/pic-icon.png" alt="">
-						</div>
-						<div class="aui-flex-box" style="flex: 0.3;font-size: 1rem;">
 							<h3 class="font-color">Name</h3>
 						</div>
 						<div class="aui-flex-box" style="text-align: right;">
-								<h3 class="font-color" id="personnal-setting">Personal Homepage ></h3>
+							<button type="button" class="mui-btn mui-btn-danger top-buttom"  id="checkInBtn" name="info-my-checkin"></button>
+							<button type="button" class="mui-btn mui-btn-danger top-buttom"  id="editBtn" name="info-my-edit"></button>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="aui-icon-list-area box-shadow">
-			<a href="javascript:;" class="aui-flex" id="changeFavorite">
-				<div class="aui-inter-user-img" style="margin-right: 0px;">
-					<img src="../../res/infoCenter/star.png" alt="" style="margin-left: 0.75rem;">
-				</div>
-				<div class="aui-flex-srt-word" name="info-center-favorite" style="padding: 0.1667em;padding-left: 1.5625rem">
-				</div>
-			</a>
-		</div>
-		
-		<div class="aui-icon-list-area box-shadow" style="height: 4.4375rem;margin-top:1.5625rem">
-			<a href="javascript:;" class="aui-flex" style="height: 4.4375rem;" id="changeWallet">
-				<div class="aui-inter-user-img" style="margin-right: 0px;">
-					<img src="../../res/infoCenter/wallet.png" alt="" style="margin-left: 0.75rem;width: 50%;">
-				</div>
-				<div class="aui-flex-srt-word" name="info-center-wallet" style="padding: 0.1667em;padding-left: 1.5625rem;width: 20%;">
-				</div>
-				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
-					<div name="" >0.00</div>
-					<div name="info-center-pill" ></div>
-				</div>
-				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
-					<div name="" >0.00</div>
-					<div name="info-center-coupon" ></div>
-				</div>
-				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
-					<div name="" >0.00</div>
-					<div name="info-center-card" ></div>
-				</div>
-			</a>
-		</div>
-		
-		
-		<div id="infoGiftBtn" class="aui-icon-list-area box-shadow" style="margin-top: 1.5625rem;">
-			<a href="javascript:;" class="aui-flex">
-				<div class="aui-inter-user-img" style="margin-right: 0px;">
-					<img src="../../res/infoCenter/invitation.png" alt="" style="margin-left: 0.75rem;">
-				</div>
-				<div class="aui-flex-srt-word" name="info-center-gift" style="padding: 0.1667em;padding-left: 1.5625rem">
-				</div>
-			</a>
-		</div>
-			
-		<div id="inviteGift" class="aui-icon-list-area box-shadow">
-			<a href="javascript:;" class="aui-flex">
-				<div class="aui-inter-user-img" style="margin-right: 0px;">
-					<img src="../../res/infoCenter/gift.png" alt="" style="margin-left: 0.75rem;">
-				</div>
-				<div class="aui-flex-srt-word" name="info-center-public" style="padding: 0.1667em;padding-left: 1.5625rem">
-				</div>
-			</a>
-		</div>
-		
-		<div class="aui-icon-list-area box-shadow">
-			<a href="javascript:;" class="aui-flex">
-				<div class="aui-inter-user-img" style="margin-right: 0px;">
-					<img src="../../res/infoCenter/public.png" alt="" style="margin-left: 0.75rem;">
-				</div>
-				<div class="aui-flex-srt-word" name="info-center-activity" style="padding: 0.1667em;padding-left: 1.5625rem">
-				</div>
-			</a>
-		</div>
-	
-   
-	
-		<div class="bottom-bar ">
-			<div class="innder box-shadow" >
-				<div class="aui-palace aui-palace-two" style="position: relative; padding: 0rem;">
-					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
-						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
-							<img src="../../res/appr/first-icon.png" style="width:0.9375rem;height: 1.40625rem;margin-top: 0.5025rem ;" alt="">
-						</div>
-					</a>
-					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
-						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
-							<img src="../../res/appr/second-icon.png" style="width:1.15625rem;height: 1.375rem;margin-top: 0.5025rem ;" alt="">
-						</div>
-					</a>
-					<a id="pubBtn" href="javascript:;" class="aui-palace-grid" style="width: 25%;">
-						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
-							<img src="../../res/appr/third-icon.png"  style="width:1.25rem;height: 1.4375rem;margin-top: 0.5025rem ;" alt="">
-						</div>
-					</a>
-					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
-						<div class="aui-palace-grid-icon aui-palace-grid-icon-cate">
-							<img src="../../res/appr/fouth-icon.png"  style="width:1.375rem;height: 1.3125rem;margin-top: 0.5025rem ;" alt="">
-						</div>
-					</a>
-				</div>
+			<div class="aui-icon-list-area" style="height: 4.4375rem;margin-top:1.5625rem">
+				<a href="javascript:;" class="aui-flex" style="height: 4.4375rem;" id="changeWallet">
+					<div class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%;">
+						<div name="">1</div>
+						<div name="info-my-fans"></div>
+					</div>
+					<div class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%;">
+						<div name="">1</div>
+						<div name="info-my-follow"></div>
+					</div>
+					<div class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%">
+						<div name="">2</div>
+						<div name="info-my-praise"></div>
+					</div>
+					<div class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%">
+						<div name="">Italy</div>
+						<div name="info-my-area"></div>
+					</div>
+				</a>
 			</div>
 		</div>
+		
+		<div class="mainPic mui-row">
+			<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted padding-lr">
+				<a class="mui-control-item mui-active" href="#trends" name="info-my-trends"></a>
+				<a class="mui-control-item" href="#like" name="info-my-like"></a>
+			</div>
 			
+			<div id="trends" class="mui-control-content" style="margin-top: 0.9375rem;display: block;margin-left: 0.625rem;font-size: 0.9375rem;" >
+				<div style="margin-bottom: 0.625rem;">
+					<button  type="button" class="mui-btn  top-buttom"  id="completeBtn" name="" style="background-color:#dcdcdc;"><span name="info-my-complete"></span>&nbsp;<span>0</span></button>
+					<button type="button" class="mui-btn top-buttom"  id="videoBtn" name="" style="background-color:#FFFFFF;"><span name="info-my-video"></span>&nbsp;<span>0</span></button>
+				</div>
+				<div>
+					<div class="photo-bg" 
+						<img src="../../res/personal/person-pic.png" width="30%">
+						<div name="info-my-publish" style="padding-left: 0.625rem;padding-right: 0.625rem;"></div>
+					</div>
+		
+				</div>
+			</div>
+			
+			<div id="like" class="mui-control-content" >
+	
+			</div>
+		</div>
+		
+
 		<script src="../../js/mui.min.js"></script>
-		<script src="infoCenter.js"></script>
+		<script src="centerInfo.js"></script>
 		
 	</body>
 </html>
