@@ -12,6 +12,7 @@
 		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
 		<script src="../../js/i18n/jquery.json.min.js"></script>
 		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
+		<script src="../../js/common/common.js"></script>
 		<style>
 				.bg-img{
 					height: 31.25rem;
@@ -260,11 +261,11 @@
 			<div class="aui-tour-box-item">
 				<div class="aui-tour-layout">
 					<div class="aui-flex">
-						<div class="aui-flex-user">
+						<div id="userIcon" class="aui-flex-user">
 							<img src="../../res/infoCenter/pic-icon.png" alt="">
 						</div>
 						<div class="aui-flex-box" style="flex: 0.3;font-size: 1rem;">
-							<h3 class="font-color">Name</h3>
+							<h3 id="userName" class="font-color">Name</h3>
 						</div>
 						<div class="aui-flex-box" style="text-align: right;">
 								<h3 class="font-color" id="personnal-setting">Personal Homepage ></h3>
@@ -292,11 +293,11 @@
 				<div class="aui-flex-srt-word" name="info-center-wallet" style="padding: 0.1667em;padding-left: 1.5625rem;width: 20%;">
 				</div>
 				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
-					<div name="" >0.00</div>
+					<div name="" id="balance">0.00</div>
 					<div name="info-center-pill" ></div>
 				</div>
 				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">
-					<div name="" >0.00</div>
+					<div name="" id="Coupon">0.00</div>
 					<div name="info-center-coupon" ></div>
 				</div>
 				<div class="aui-flex-srt-word"  style="padding: 0.1667em;padding-left: 1.5625rem;text-align: center;width: 20%;">

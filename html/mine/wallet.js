@@ -24,7 +24,47 @@ wallet = {
 		changeCard:function(){
 			
 		},
-		
+		renderPage:function(){
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						//用户名
+						$('#userName').text(data.data.username);
+						//头像
+						$('#userIcon').attr('src',data.data.icon);
+						//余额
+						if (data.data.balance) {
+							$('#balance').text("$"+data.data.balance);
+						}else{
+							$('#balance').text("0.00");
+						}
+						
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+			$.ajax({
+				url: CONSTANT.baseUrl + "/voucher/get/" + TOKEN_REL.token + "?isUsed=0&isOverdue=0",
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						//优惠券
+						$("#Coupon").text(data.data.length);
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+		}
 		
 	},
 	dao: {},
@@ -33,6 +73,7 @@ wallet = {
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 		wallet.event();
+		wallet.service.renderPage();
 	},
 }
 wallet.init();
