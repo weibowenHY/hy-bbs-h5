@@ -13,6 +13,7 @@ appraisal = {
 		
 		$("#hotBtn").on("click", appraisal.service.changeHot);
 		
+		$("#squareBtn").on("click", appraisal.service.changeSquare);
 		
 		
 	},
@@ -27,7 +28,13 @@ appraisal = {
 		},
 		changeHot:function(){
 			window.location.href = "pubAuth.html";
+		},
+		changeSquare:function(){
+			window.location.href = "pubAuth.html";
 		}
+		
+		
+		
 		
 	},
 	dao: {},

@@ -6,10 +6,14 @@ shoes = {
 
 	// 事件注册
 	event: function() {
+		$(".aui-icon-list-area").on("click", shoes.service.changeModel);
 	},
 
 	
 	service: {
+		changeModel:function(){
+			window.location.href = "model.html";
+		}
 		
 	},
 	dao: {},
@@ -17,6 +21,7 @@ shoes = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		shoes.event();
 	},
 }
 shoes.init();

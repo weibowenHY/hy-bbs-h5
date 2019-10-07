@@ -6,17 +6,27 @@ pubAuth = {
 
 	// 事件注册
 	event: function() {
+		
+		$("#cancelBtn").on("click", pubAuth.service.cancelInit);
 	},
 
 	
 	service: {
 		
+		cancelInit:function(){
+			alert("cancle");
+		},
+		
+		myAuthList:function(){
+			
+		}
 	},
 	dao: {},
 	init: function() {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		pubAuth.event();
 	},
 }
 pubAuth.init();
