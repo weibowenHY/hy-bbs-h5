@@ -6,9 +6,65 @@ favorite = {
 
 	// 事件注册
 	event: function() {
+		$("#articleBtn").on("click", favorite.service.doArticle);
+		$("#photoBtn").on("click", favorite.service.doPhoto);
+		$("#resultBtn").on("click", favorite.service.doResult);
+		$("#forumBtn").on("click", favorite.service.doForum);
+		$("#searchBtn").on("click", favorite.service.doSearch);
+		
 	},
 
 	service: {
+		doArticle:function(){
+			if($("#articleBtn").hasClass("active")){
+				$("#articleBtn").removeClass("active");
+			}else{
+				$("#articleBtn").addClass("active");
+				$("#photoBtn").removeClass("active");
+				$("#resultBtn").removeClass("active");
+				$("#forumBtn").removeClass("active");
+			}
+			window.location.href = "photo.html";
+		},
+		doPhoto:function(){
+			if($("#photoBtn").hasClass("active")){
+				$("#photoBtn").removeClass("active");
+			}else{
+				$("#articleBtn").removeClass("active");
+				$("#photoBtn").addClass("active");
+				$("#resultBtn").removeClass("active");
+				$("#forumBtn").removeClass("active");
+			}
+			window.location.href = "photo.html";
+			
+		},
+		doResult:function(){
+			if($("#resultBtn").hasClass("active")){
+				$("#resultBtn").removeClass("active");
+			}else{
+				$("#articleBtn").removeClass("active");
+				$("#photoBtn").removeClass("active");
+				$("#resultBtn").addClass("active");
+				$("#forumBtn").removeClass("active");
+			}
+			window.location.href = "photo.html";
+			
+		},
+		doForum:function(){
+			if($("#forumBtn").hasClass("active")){
+				$("#forumBtn").removeClass("active");
+			}else{
+				$("#articleBtn").removeClass("active");
+				$("#photoBtn").removeClass("active");
+				$("#resultBtn").removeClass("active");
+				$("#forumBtn").addClass("active");
+			}
+			window.location.href = "photo.html";
+		},
+		doSearch:function(){
+			window.location.href = "lookFor.html";
+			
+		}
 
 	},
 	dao: {},

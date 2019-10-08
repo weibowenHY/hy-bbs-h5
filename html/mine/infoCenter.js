@@ -26,7 +26,7 @@ infoCenter = {
 		},
 			
 		changeFavorite:function(){
-			window.location.href = "photo.html";
+			window.location.href = "favorite.html";
 		},
 		
 		changeWallet:function(){

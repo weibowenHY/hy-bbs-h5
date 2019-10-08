@@ -37,13 +37,22 @@
 			opacity:1;
 		}
 		.index-inner{
-			vertical-align: middle;
-			width: 30%;
+			width: 100%;
 			color: rgba(255,255,255,1);
 			font-weight: bold;
+			text-align: center;
+			height: auto;
+			
+			
 		}
 		img{
 			width: 2.5rem;
+		}
+		
+		.active{
+			background-color: #00BF7E;
+			padding: 1.25rem;
+			border-radius: 0.9375rem;
 		}
 		
 	</style>
@@ -52,7 +61,7 @@
 	
 		<header class="mui-bar mui-bar-nav aui-header ">
 			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #FFFFFF;"></a>
-			<h1 class="mui-title" style="color: #FFFFFF;margin-left: 8.875rem;font-weight: bold;" name="info-favorite-title"></h1>
+			<h1 class="mui-title" style="color: #FFFFFF;margin-left: 6.475rem;font-weight: bold;" name="info-favorite-title"></h1>
 		</header>
 		<div class="aui-scrollView">
 			<div class="aui-icon-list-area" style="position: absolute;top: 1.875rem">
@@ -60,13 +69,11 @@
 					<div class="aui-flex-srt-word-right" style="left: 0.1667em;" >
 						<img src="../../res/pub/all.png" >
 					</div>
-				
 				</a>
 			</div>
-			<div class="aui-icon-list-area" style="position: absolute;top: 1.875rem">
+			<div class="aui-icon-list-area" style="position: absolute;top: 1.875rem;right: 0rem;">
 				<a href="javascript:;" class="aui-flex" style="width: 100%;">
-				
-					<div class="aui-flex-srt-word-right" style="right: 0rem; position: relative;float: right;" >
+					<div id="searchBtn" class="aui-flex-srt-word-right" style="right: 0rem; position: relative;float: right;" >
 						<img src="../../res/pub/search.png">
 					</div>
 				</a>
@@ -76,16 +83,16 @@
 					<div class="index-inner" ></div>
 				</div>
 				<div class="index-flex">
-					<div class="index-inner" name="info-favorite-article"></div>
+					<div id="articleBtn" class="index-inner" name="info-favorite-article"></div>
 				</div>
 				<div class="index-flex">
-					<div class="index-inner" name="info-favorite-photo" ></div>
+					<div id="photoBtn" class="index-inner" name="info-favorite-photo" ></div>
 				</div>
 				<div class="index-flex">
-					<div class="index-inner" name="info-favorite-result"></div>
+					<div id="resultBtn" class="index-inner" name="info-favorite-result"></div>
 				</div>
 				<div class="index-flex">
-					<div class="index-inner" name="info-favorite-forum"></div>
+					<div id="forumBtn" class="index-inner" name="info-favorite-forum"></div>
 				</div>
 			</div>
 		</div>

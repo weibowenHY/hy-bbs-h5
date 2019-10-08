@@ -6,10 +6,18 @@ photo = {
 
 	// 事件注册
 	event: function() {
+		$("#allBtn").on("click", photo.service.doAll);
+		$("#searchBtn").on("click", photo.service.doSearch);
 	},
 
 	
 	service: {
+		doAll:function(){
+			window.location.href = "favorite.html";
+		},
+		doSearch:function(){
+			window.location.href = "lookFor.html";
+		}
 		
 	},
 	dao: {},
@@ -17,6 +25,7 @@ photo = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		photo.event();
 	},
 }
 photo.init();

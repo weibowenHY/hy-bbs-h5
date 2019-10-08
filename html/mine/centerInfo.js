@@ -10,7 +10,7 @@ centerInfo = {
 		$("#completeBtn").on("click", centerInfo.service.doComplete);
 		$("#videoBtn").on("click", centerInfo.service.doVideo);
 		$("#fanBtn").on("click", centerInfo.service.doFan);
-		
+		$("#publishBtn").on("click", centerInfo.service.doPublish);
 	
 		
 	},
@@ -30,6 +30,9 @@ centerInfo = {
 		},
 		doFan:function(){
 			window.location.href = "followers.html";	
+		},
+		doPublish:function(){
+			window.location.href = "";	
 		}
 			
 	},
