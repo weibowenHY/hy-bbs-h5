@@ -15,6 +15,8 @@ infoCenter = {
 		
 		$("#infoGiftBtn").on("click", infoCenter.service.changeGift);
 		
+		$("#doPub").on("click", infoCenter.service.changePubInfo);
+		
 			
 	},
 
@@ -37,6 +39,9 @@ infoCenter = {
 		},
 		changePub:function(){
 			window.location.href = "myPublish.html";
+		},
+		changePubInfo:function(){
+			window.location.href = "../../html/pub/appraisal.html";
 		},
 		renderPage:function(){
 			$.ajax({
