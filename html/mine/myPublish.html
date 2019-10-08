@@ -293,71 +293,38 @@
 				.mui-bar {
 				    background: none;
 				}
+				.mainPic{
+					margin-top:2.5rem;
+				}
 			</style>
 		
     </head>
     <body>
 		<header class="mui-bar mui-bar-nav aui-header ">
-			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #FFFFFF;"></a>
-			<h1 class="mui-title" style="color: #FFFFFF;" name="info-chat-title"></h1>
+			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #000000;"></a>
+			<h1 class="mui-title" style="color: #000000;" name="info-publish-title"></h1>
+			<button id="info-save-btn" class="mui-btn  mui-btn-link mui-pull-right right-button" name="info-save" style="font-size: 17px; color:#8ED5AB;font-weight:500"></button>
 		</header>
-		<div class="aui-tour-content box-shadow">
-			<a href="javascript:;" class="aui-navBar-item">
-				<i class="icon icon-return"></i>
-			</a>
-		</div>
-		<div class="aui-tour-box">
-			<div class="aui-tour-box-item">
-				<div class="aui-tour-layout">
-					<div class="aui-flex">
-						<div class="aui-flex-user">
-							<img src="../../res/infoCenter/pic-icon.png" alt="">
-							<h3 class="font-color">Name</h3>
-						</div>
-						<div class="aui-flex-box" style="text-align: right;">
-							<button type="button" class="mui-btn mui-btn-danger top-buttom"  id="checkInBtn" name="info-my-checkin"></button>
-							<button type="button" class="mui-btn mui-btn-danger top-buttom"  id="editBtn" name="info-my-edit"></button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="aui-icon-list-area" style="height: 4.4375rem;margin-top:1.5625rem">
-				<a href="javascript:;" class="aui-flex" style="height: 4.4375rem;" id="changeWallet">
-					<div id="fanBtn" class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%;">
-						<div name="">1</div>
-						<div name="info-my-fans"></div>
-					</div>
-					<div class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%;">
-						<div name="">1</div>
-						<div name="info-my-follow"></div>
-					</div>
-					<div class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%">
-						<div name="">2</div>
-						<div name="info-my-praise"></div>
-					</div>
-					<div class="aui-flex-srt-word" style="padding: 0.1667em;text-align: center;width: 25%">
-						<div name="">Italy</div>
-						<div name="info-my-area"></div>
-					</div>
-				</a>
-			</div>
-		</div>
 		
 		<div class="mainPic mui-row">
-			<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted padding-lr">
-				<a class="mui-control-item mui-active" href="#trends" name="info-my-trends"></a>
-				<a class="mui-control-item" href="#like" name="info-my-like"></a>
-			</div>
-			
 			<div id="trends" class="mui-control-content" style="margin-top: 0.9375rem;display: block;margin-left: 0.625rem;font-size: 0.9375rem;" >
 				<div style="margin-bottom: 0.625rem;">
-					<button  type="button" class="mui-btn  top-buttom"  id="completeBtn" name="" style="background-color:#dcdcdc;"><span name="info-my-complete"></span>&nbsp;<span>0</span></button>
-					<button type="button" class="mui-btn top-buttom"  id="videoBtn" name="" style="background-color:#FFFFFF;"><span name="info-my-video"></span>&nbsp;<span>0</span></button>
+					<button  type="button" class="mui-btn  top-buttom"  id="completeBtn" name="" style="background-color:#dcdcdc;"><span name="info-publish-complete"></span>&nbsp;<span>0</span></button>
+					<button type="button" class="mui-btn top-buttom"  id="videoBtn" name="" style="background-color:#FFFFFF;"><span name="info-publish-video"></span>&nbsp;<span>0</span></button>
+					<button type="button" class="mui-btn top-buttom"  id="videoBtn" name="" style="background-color:#FFFFFF;"><span name="info-publish-photo"></span>&nbsp;<span>0</span></button>
 				</div>
-				<div >
+				<div style="width: 48%; float: left;">
 					<div class="photo-bg" >
 						<img src="../../res/personal/person-pic.png" width="30%">
-						<div name="info-my-publish" style="padding-left: 0.625rem;padding-right: 0.625rem;"></div>
+						<div name="info-publish-publish" style="padding-left: 0.625rem;padding-right: 0.625rem;"></div>
+					</div>
+				</div>
+				<div style="width: 48%;float: left;background-image: url(../../css/publish/photo-1.png);margin-left: 0.625rem;">
+					<div class="photo-bg" >
+					</div>
+				</div>
+				<div style="width: 48%;float: left;background-image: url(../../css/publish/photo-1.png);margin-top: 0.625rem;">
+					<div class="photo-bg" >
 					</div>
 				</div>
 			</div>
@@ -369,7 +336,7 @@
 		
 
 		<script src="../../js/mui.min.js"></script>
-		<script src="centerInfo.js"></script>
+		<script src="myPublish.js"></script>
 		
 	</body>
 </html>

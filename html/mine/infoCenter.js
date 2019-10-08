@@ -11,7 +11,7 @@ infoCenter = {
 		$("#changeWallet").on("click", infoCenter.service.changeWallet);
 		$("#inviteGift").on("click", infoCenter.service.changeGift);
 		
-		$("#pubBtn").on("click", infoCenter.service.changePub);
+		$("#publishBtn").on("click", infoCenter.service.changePub);
 		
 		$("#infoGiftBtn").on("click", infoCenter.service.changeGift);
 		
@@ -36,7 +36,7 @@ infoCenter = {
 			window.location.href = "inviteGift.html";
 		},
 		changePub:function(){
-			window.location.href = "../pub/appraisal.html";
+			window.location.href = "myPublish.html";
 		},
 		renderPage:function(){
 			$.ajax({
