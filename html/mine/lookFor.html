@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link href="../../css/mui.min.css" rel="stylesheet" />
+	<link href="../../css/search/style.css" rel="stylesheet" type="text/css" />
+	
+	<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../../js/i18n/jquery.json.min.js"></script>
+	<script src="../../js/i18n/jquery.i18n.properties.js"></script>
+	<style>
+		.mui-bar{
+			background:  none;
+		}
+		body{
+			background-image: url(../../res/search/search-bg.png);
+		}
+		.aui-search-box{
+			margin-top: 3.125rem;
+		}
+		.aui-search-box input{
+			height: 3.125rem;
+			text-align: center;
+		}
+		.icon-search{
+			left:5.25rem;
+		}
+		.aui-search-box{
+			opacity:0.5;
+		}
+		.aui-search-box input{
+			padding-bottom:1.75rem;
+			font-size: 1.125rem;
+			color: #000000;
+			font-weight: 800;
+		}
+		
+
+		.search-contain{
+			margin-top: 1.125rem;
+			margin-left: 0.84375rem;
+		}
+		
+		.hot-search{
+			color: #FFFFFF;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<section class="aui-flexView">
+		<header class="mui-bar mui-bar-nav aui-header ">
+			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #FFFFFF;"></a>
+			<h1 class="mui-title" style="color: #FFFFFF;" name="info-search-title"></h1>
+		</header>
+		<section class="aui-scrollView">
+			<div class="aui-search-box">
+				<i class="icon icon-search"></i>
+				<input type="text" placeholder="Input problem">
+			</div>
+			<div class="search-contain">
+				<ul class="hot-search">
+					<li>#Hot Search</li>
+				</ul>
+			</div>
+		</section>
+		
+	</section>
+</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="lookFor.js"></script>
+</html>

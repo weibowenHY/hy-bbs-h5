@@ -9,6 +9,8 @@ centerInfo = {
 		$("#editBtn").on("click", centerInfo.service.doEdit);
 		$("#completeBtn").on("click", centerInfo.service.doComplete);
 		$("#videoBtn").on("click", centerInfo.service.doVideo);
+		$("#fanBtn").on("click", centerInfo.service.doFan);
+		
 	
 		
 	},
@@ -26,6 +28,9 @@ centerInfo = {
 			$("#completeBtn").css("background-color","#ffffff");
 			$("#videoBtn").css("background-color","#dcdcdc");
 		},
+		doFan:function(){
+			window.location.href = "followers.html";	
+		}
 			
 	},
 	dao: {},

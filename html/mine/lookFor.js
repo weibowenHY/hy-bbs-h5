@@ -2,7 +2,7 @@ mui.init({
 
 });
 
-favorite = {
+lookFor = {
 
 	// 事件注册
 	event: function() {
@@ -16,10 +16,9 @@ favorite = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
-		favorite.event();
 	},
 }
-favorite.init();
+lookFor.init();
 
 function loadProperties(type) {
 	jQuery.i18n.properties({
@@ -29,12 +28,9 @@ function loadProperties(type) {
 		language: type, // 对应的语言
 		cache: false,
 		encoding: 'UTF-8',
-		callback: function() { // 回调方法   
-		 $("[name='info-favorite-title']").html($.i18n.prop('info-favorite-title'));
-		 $("[name='info-favorite-article']").html($.i18n.prop('info-favorite-article'));
-		 $("[name='info-favorite-photo']").html($.i18n.prop('info-favorite-photo'));
-		 $("[name='info-favorite-result']").html($.i18n.prop('info-favorite-result'));
-		 $("[name='info-favorite-forum']").html($.i18n.prop('info-favorite-forum'));
+		callback: function() { // 回调方法    
+			$("[name='info-search-title']").html($.i18n.prop('info-search-title'));
+
 		}
 	});
 }
