@@ -6,6 +6,8 @@ centerInfo = {
 
 	// 事件注册
 	event: function() {
+		
+		$("#checkInBtn").on("click", centerInfo.service.doSetting);
 		$("#editBtn").on("click", centerInfo.service.doEdit);
 		$("#completeBtn").on("click", centerInfo.service.doComplete);
 		$("#videoBtn").on("click", centerInfo.service.doVideo);
@@ -17,6 +19,9 @@ centerInfo = {
 
 	
 	service: {
+		doSetting:function(){
+			window.location.href = "settings.html";
+		},
 		doEdit:function(){
 			window.location.href = "infoEdit.html";	
 		},

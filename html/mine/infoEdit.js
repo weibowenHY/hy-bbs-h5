@@ -10,12 +10,17 @@ infoEdit = {
 		$("#edit-name").on("click", infoEdit.service.showName);
 		$("#edit-gender").on("click", infoEdit.service.showGender);
 		$("#edit-area").on("click", infoEdit.service.showArea);
+		$("#cancleBtn").on("click", infoEdit.service.doCancle);
+		
 		
 	},
 	
 	service: {
 		showProfile:function(){
-			window.location.href = "settings.html";
+			$(".bottom-info").show();
+		},
+		doCancle:function(){
+			$(".bottom-info").hide();
 		},
 		
 		showName:function (){
@@ -58,6 +63,13 @@ function loadProperties(type) {
 			$("[name='info-edit-name']").html($.i18n.prop('info-edit-name'));
 			$("[name='info-edit-gender']").html($.i18n.prop('info-edit-gender'));
 			$("[name='info-edit-area']").html($.i18n.prop('info-edit-area'));
+			
+			$("[name='info-edit-album']").html($.i18n.prop('info-edit-album'));
+			$("[name='info-edit-photoG']").html($.i18n.prop('info-edit-photoG'));
+			$("[name='info-edit-cancle']").html($.i18n.prop('info-edit-cancle'));
+			
+			
+			
 		}
 	});
 }

@@ -133,6 +133,30 @@
 				height: 3rem;
 				margin-top: 5.175rem;
 			}
+			
+			.bottom-info{
+				position: absolute;
+				height: 9.375rem;
+				background-color: #00BF7E;
+				width: 100%;
+				bottom: 0rem;
+				border-top-left-radius: 1.875rem;
+				border-top-right-radius: 1.875rem;
+				display: flex; 
+				flex-direction:column;
+				justify-content:center;
+				align-items:Center;
+			}
+			.bottom-flex{
+				flex: 1;
+				color: #FFFFFF;
+				font-weight: bold;
+				text-align: center;
+				width: 100%;
+				vertical-align: middle;
+				margin-top: 0.9375rem;
+				
+			}
 		</style>
 	</head>
 
@@ -143,7 +167,6 @@
 			<h1 class="mui-title" style="color: #000000;" name="info-edit-title"></h1>
 		</header>
 		<div class="mui-content">
-			
 			<div id="edit-profile" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem; height: 3.90625rem;">
 				<a href="javascript:;" class="aui-flex" style="height: 3.90625rem">
 					<div class="aui-flex-srt-word" name="info-edit-photo" style="padding: 0.1667em;">
@@ -154,8 +177,6 @@
 				
 				</a>
 			</div>
-			
-			
 			<div id="edit-name" class="aui-icon-list-area box-shadow sheet-small" style="margin-top: 2.1875rem;">
 				<a href="javascript:;" class="aui-flex" style="height: 2.1875rem">
 					<div class="aui-flex-srt-word" name="info-edit-name" style="padding: 0.1667em;">
@@ -177,13 +198,19 @@
 					<div class="aui-flex-arrow"></div>
 				</a>
 			</div>
-
-			
-
-		
-		
-		
+			<div class="bottom-info" style="display: none;">
+				<div class="bottom-flex" style="border-bottom: 1px solid #FFFFFF;">
+					<span name="info-edit-album"></span>
+				</div>
+				<div class="bottom-flex" style="border-bottom: 2px solid #FFFFFF;">
+					<span name="info-edit-photo"></span>
+				</div>
+				<div class="bottom-flex" id="cancleBtn">
+					<span name="info-edit-cancle"></span>
+				</div>
+			</div>
 		</div>
+		
 		
 	</body>
 	<script src="../../js/mui.min.js"></script>

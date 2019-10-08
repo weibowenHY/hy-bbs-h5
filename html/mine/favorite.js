@@ -12,6 +12,7 @@ favorite = {
 		$("#forumBtn").on("click", favorite.service.doForum);
 		$("#searchBtn").on("click", favorite.service.doSearch);
 		
+		
 	},
 
 	service: {
