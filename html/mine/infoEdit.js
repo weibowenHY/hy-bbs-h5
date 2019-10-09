@@ -2,6 +2,27 @@ mui.init({
 
 });
 
+document.addEventListener('plusready',function(){
+        
+
+
+
+            //调用系统摄像头进行拍照
+
+//             var r = null;
+//             var cmr = plus.camera.getCamera(0);
+//             var res = cmr.supportedImageResolutions[0];
+//             var fmt = cmr.supportedImageFormats[0];
+//             cmr.captureImage(function(path){
+// 
+//             },function(err){
+// 
+//             },{resolution:res,format:fmt});
+// 
+
+
+        },false)
+
 infoEdit = {
 
 	// 事件注册
@@ -11,7 +32,8 @@ infoEdit = {
 		$("#edit-gender").on("click", infoEdit.service.showGender);
 		$("#edit-area").on("click", infoEdit.service.showArea);
 		$("#cancleBtn").on("click", infoEdit.service.doCancle);
-		
+		$("#albumBtn").on("click", infoEdit.service.doAlbum);
+		$("#cameraBtn").on("click", infoEdit.service.doCamera);
 		
 	},
 	
@@ -33,9 +55,38 @@ infoEdit = {
 		
 		showArea:function (){
 			window.location.href = "countryChoose.html";
+		},
+		
+		doAlbum:function(){
+			var lfs = null;//
+			plus.gallery.pick(function(path){
+			    console.log(path);
+			    lfs = path.files;
+			    //savePicture(path);
+				infoEdit.service.savePicture(path);
+			},function(e){
+			   
+			},{filter:"none",multiple:true,maximum:1,system:false,onmaxed:function(){
+			},popover:true,selected:lfs});
+		},
+		doCamera:function(){
+			var r = null;
+			var cmr = plus.camera.getCamera(0);
+			var res = cmr.supportedImageResolutions[0];
+			var fmt = cmr.supportedImageFormats[0];
+			cmr.captureImage(function(path){
+
+			},function(err){
+
+			},{resolution:res,format:fmt});
+		},
+		
+		savePicture:function(path){
+		    plus.gallery.save(path,function(){
+		        plus.nativeUI.alert('保存图片成功！目录地址是：'+path);
+		    })
+		
 		}
-		
-		
 		
 	},
 	dao: {},
