@@ -9,10 +9,15 @@
         <meta content="telephone=no" name="format-detection"/>
         <link href="../../css/infoCenter/style.css" rel="stylesheet" type="text/css"/>
 		<link href="../../css/mui.min.css" rel="stylesheet" />
+		
+		<link rel="stylesheet" href="../../css/zoomImage/imageview.css" />
+		<link rel="stylesheet" href="../../css/zoomImage/mui.imageviewer.css" />
+		
 		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
 		<script src="../../js/i18n/jquery.json.min.js"></script>
 		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
 		<script src="../../js/common/common.js"></script>
+		
 		<style>
 				.bg-img{
 					height: 31.25rem;
@@ -262,7 +267,7 @@
 				<div class="aui-tour-layout">
 					<div class="aui-flex">
 						<div id="userIcon" class="aui-flex-user">
-							<img src="../../res/infoCenter/pic-icon.png" alt="">
+							<img data-preview-src="" data-preview-group="4" src="../../res/infoCenter/pic-icon.png" alt="">
 						</div>
 						<div class="aui-flex-box" style="flex: 0.3;font-size: 1rem;">
 							<h3 id="userName" class="font-color">Name</h3>
@@ -328,7 +333,7 @@
 			</a>
 		</div>
 		
-		<div class="aui-icon-list-area box-shadow">
+		<div id="activityBtn" class="aui-icon-list-area box-shadow">
 			<a href="javascript:;" class="aui-flex">
 				<div class="aui-inter-user-img" style="margin-right: 0px;">
 					<img src="../../res/infoCenter/public.png" alt="" style="margin-left: 0.75rem;">
@@ -338,9 +343,7 @@
 			</a>
 		</div>
 	
-   
-	
-		<div class="bottom-bar ">
+		<div class="bottom-bar">
 			<div class="innder box-shadow" >
 				<div class="aui-palace aui-palace-two" style="position: relative; padding: 0rem;">
 					<a href="javascript:;" class="aui-palace-grid" style="width: 25%;">
@@ -368,6 +371,9 @@
 		</div>
 			
 		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/zoomImage/mui.imageViewer.js" ></script>
+		<script type="text/javascript" src="../../js/zoomImage/mui.previewimage.js" ></script>
+		<script type="text/javascript" src="../../js/zoomImage/mui.zoom.js" ></script>
 		<script src="infoCenter.js"></script>
 		
 	</body>

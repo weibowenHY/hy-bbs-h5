@@ -13,6 +13,7 @@ centerInfo = {
 		$("#videoBtn").on("click", centerInfo.service.doVideo);
 		$("#fanBtn").on("click", centerInfo.service.doFan);
 		$("#publishBtn").on("click", centerInfo.service.doPublish);
+		$("#imageIcon").on("click", centerInfo.service.zoomPic);
 	
 		
 	},
@@ -38,7 +39,8 @@ centerInfo = {
 		},
 		doPublish:function(){
 			window.location.href = "";	
-		}
+		},
+		zoomPic:function
 			
 	},
 	dao: {},

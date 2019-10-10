@@ -17,11 +17,21 @@ infoCenter = {
 		
 		$("#doPub").on("click", infoCenter.service.changePubInfo);
 		
+		$("#userIcon").on("click",infoCenter.service.zoomPic);
+		
+		$("#activityBtn").on("click",infoCenter.service.doActivity);
+		
+		
+		
 			
 	},
 
 	
 	service: {
+		
+		zoomPic:function(){
+			mui.previewImage();
+		},
 		
 		changePersonnalSetting:function(){
 			window.location.href = "centerInfo.html";
@@ -42,6 +52,9 @@ infoCenter = {
 		},
 		changePubInfo:function(){
 			window.location.href = "../../html/pub/appraisal.html";
+		},
+		doActivity:function(){
+			window.location.href = "../../html/chat/concrete.html"
 		},
 		renderPage:function(){
 			$.ajax({
