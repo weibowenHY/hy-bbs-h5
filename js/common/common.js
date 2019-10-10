@@ -367,3 +367,24 @@ var commonHanlder = {
 	}
 
 }
+	/**
+ 	 * 年月日 时分秒
+ 	 */
+ 	function getYyyymmddhh24miss(time) {
+
+ 	    var t = new Date(time);
+ 	    var str = '';
+ 	    str = str + t.getFullYear()+"-"+format2Char(t.getMonth() + 1)+"-"+ format2Char(t.getDate())+" ";
+ 	    return str;
+ 	}
+ 	
+ 	/**
+ 	 * 格式为补0
+ 	 */
+ 	function format2Char(num){
+ 	    var str = String(num);
+ 	    if(str && str.length == 1){
+ 	        return '0' + str;
+ 	    }
+ 	    return str;
+ 	}

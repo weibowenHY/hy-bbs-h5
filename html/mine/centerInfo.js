@@ -38,6 +38,82 @@ centerInfo = {
 		},
 		doPublish:function(){
 			window.location.href = "";	
+		},
+		getUser:function(){
+			//获取当前用户信息
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						//用户名
+						$('#userName').text(data.data.username);
+						//头像
+						$('#userIcon').attr('src',data.data.icon);
+						//地区
+						$('#userArea').text(data.data.country);
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+			
+			//获取粉丝数
+			$.ajax({
+				url: CONSTANT.baseUrl + "/relation/getFansCount/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						//fans
+						$('#fans').text(data.data);
+						
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+			
+			//获取关注人数
+			$.ajax({
+				url: CONSTANT.baseUrl + "/relation/getConcernsCount/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						//fans
+						$('#follow').text(data.data);
+						
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+			
+			//获取点赞数量
+			$.ajax({
+				url: CONSTANT.baseUrl + "/relation/getFansCount/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						//fans
+						$('#praise').text(data.data);
+						
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
 		}
 			
 	},
@@ -47,6 +123,7 @@ centerInfo = {
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 		centerInfo.event();
+		centerInfo.service.getUser();
 	},
 }
 centerInfo.init();
