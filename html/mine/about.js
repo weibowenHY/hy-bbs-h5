@@ -27,7 +27,7 @@ about = {
 			
 		},
 		shareInformation:function(){
-			window.location.href = "componyInfo.html";
+			window.location.href = "../../html/chat/infomation.html";
 			
 		},
 		shareComplaint:function(){

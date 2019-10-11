@@ -36,6 +36,15 @@ function loadProperties(type) {
 		$("[name='info-change-country']").html($.i18n.prop('info-change-country'));
 		$("[name='info-change-albania']").html($.i18n.prop('info-change-albania'));
 		$("[name='info-change-bulgaria']").html($.i18n.prop('info-change-bulgaria'));
+		$("[name='info-change-bosnia']").html($.i18n.prop('info-change-bosnia'));
+		$("[name='info-change-romania']").html($.i18n.prop('info-change-romania'));
+		$("[name='info-change-macedonia']").html($.i18n.prop('info-change-macedonia'));
+		$("[name='info-change-yugoslavia']").html($.i18n.prop('info-change-yugoslavia'));
+		$("[name='info-change-slovenia']").html($.i18n.prop('info-change-slovenia'));
+		$("[name='info-change-greece']").html($.i18n.prop('info-change-greece'));
+		$("[name='info-change-italy']").html($.i18n.prop('info-change-italy'));
+		
+		
 
 		}
 	});

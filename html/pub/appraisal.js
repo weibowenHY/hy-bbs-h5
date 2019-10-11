@@ -15,6 +15,10 @@ appraisal = {
 		
 		$("#squareBtn").on("click", appraisal.service.changeSquare);
 		
+		$("#personalCenter").on("click", appraisal.service.changeCenter);
+		
+		
+		
 		
 	},
 
@@ -31,6 +35,9 @@ appraisal = {
 		},
 		changeSquare:function(){
 			window.location.href = "pubAuth.html";
+		},
+		changeCenter:function(){
+			window.location.href = "../../html/mine/infoCenter.html";
 		}
 		
 		

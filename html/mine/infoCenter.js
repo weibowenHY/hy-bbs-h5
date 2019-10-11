@@ -19,7 +19,11 @@ infoCenter = {
 		
 		$("#userIcon").on("click",infoCenter.service.zoomPic);
 		
-		$("#activityBtn").on("click",infoCenter.service.doActivity);
+		$("#adminBtn").on("click",infoCenter.service.doActivity);
+		
+		$("#settingBtn").on("click",infoCenter.service.doSetting);
+		
+		
 		
 		
 		
@@ -55,6 +59,9 @@ infoCenter = {
 		},
 		doActivity:function(){
 			window.location.href = "../../html/chat/concrete.html"
+		},
+		doSetting:function(){
+			window.location.href = "settings.html"
 		},
 		renderPage:function(){
 			$.ajax({

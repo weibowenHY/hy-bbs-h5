@@ -21,7 +21,7 @@ centerInfo = {
 	
 	service: {
 		doSetting:function(){
-			window.location.href = "settings.html";
+			window.location.href = "integral.html";
 		},
 		doEdit:function(){
 			window.location.href = "infoEdit.html";	
@@ -40,7 +40,10 @@ centerInfo = {
 		doPublish:function(){
 			window.location.href = "";	
 		},
-		zoomPic:function
+		zoomPic:function(){
+			mui.previewImage();
+			
+		}
 			
 	},
 	dao: {},
