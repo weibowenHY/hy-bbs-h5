@@ -119,9 +119,7 @@ centerInfo = {
 					}
 				}
 			});
->>>>>>> f415416d6625ad1bcdc9e402e1643b15230889ee
 		}
-			
 	},
 	dao: {},
 	init: function() {
