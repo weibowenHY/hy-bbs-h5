@@ -40,11 +40,10 @@ centerInfo = {
 		doPublish:function(){
 			window.location.href = "";	
 		},
-<<<<<<< HEAD
+
 		zoomPic:function(){
 			mui.previewImage();
-			
-=======
+
 		getUser:function(){
 			//获取当前用户信息
 			$.ajax({

@@ -6,11 +6,28 @@ model = {
 
 	// 事件注册
 	event: function() {
+		$("#shoesBtn").on("click", model.service.doCamera);
+		$("#brandBtn").on("click", model.service.doCamera);
+		$("#needleBtn").on("click", model.service.doCamera);
+		$("#insolesBtn").on("click", model.service.doCamera);
+		$("#boxesBtn").on("click", model.service.doCamera);
+		$("#stampBtn").on("click", model.service.doCamera);
+		$("#otherBtn").on("click", model.service.doCamera);
 	},
 
 	
 	service: {
+		doCamera:function(){
+			var r = null;
+			var cmr = plus.camera.getCamera(0);
+			var res = cmr.supportedImageResolutions[0];
+			var fmt = cmr.supportedImageFormats[0];
+			cmr.captureImage(function(path){
 		
+			},function(err){
+		
+			},{resolution:res,format:fmt});
+		},
 	},
 	dao: {},
 	init: function() {

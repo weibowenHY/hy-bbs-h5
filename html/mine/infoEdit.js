@@ -69,6 +69,7 @@ infoEdit = {
 			},{filter:"none",multiple:true,maximum:1,system:false,onmaxed:function(){
 			},popover:true,selected:lfs});
 		},
+		
 		doCamera:function(){
 			var r = null;
 			var cmr = plus.camera.getCamera(0);
