@@ -43,6 +43,7 @@ centerInfo = {
 
 		zoomPic:function(){
 			mui.previewImage();
+		},
 
 		getUser:function(){
 			//获取当前用户信息
