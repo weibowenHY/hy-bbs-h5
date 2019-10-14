@@ -14,12 +14,16 @@ centerInfo = {
 		$("#fanBtn").on("click", centerInfo.service.doFan);
 		$("#publishBtn").on("click", centerInfo.service.doPublish);
 		$("#imageIcon").on("click", centerInfo.service.zoomPic);
+		$("#followBtn").on("click", centerInfo.service.doFollow);
 	
 		
 	},
 
 	
 	service: {
+		doFollow:function(){
+			window.location.href = "followers.html";
+		},
 		doSetting:function(){
 			window.location.href = "integral.html";
 		},
@@ -35,7 +39,7 @@ centerInfo = {
 			$("#videoBtn").css("background-color","#dcdcdc");
 		},
 		doFan:function(){
-			window.location.href = "followers.html";	
+			window.location.href = "fans.html";	
 		},
 		doPublish:function(){
 			window.location.href = "";	
