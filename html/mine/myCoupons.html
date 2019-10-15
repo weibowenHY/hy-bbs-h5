@@ -13,24 +13,113 @@
 		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
 		<script src="../../js/i18n/jquery.json.min.js"></script>
 		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
+		<style>
+			.right-button{
+				font-size: 17px;
+				
+			}
+			.aui-icon-list-area{
+				height: 4.1667em;
+				margin-top: 0.8333em;
+				background-color: #00c87b;
+				border-radius: 15px;
+				margin-left:0.4167em;
+				margin-right: 0.4167em;
+			}
+			
+			.aui-icon-list-area{
+				height: 4.1667em;
+				margin-top: 1em;
+				
+			}
+			.aui-icon-list-area a{
+				height: 4.1667em;
+			}
+			
+			.aui-flex-srt-word{
+				color: #FFFFFF;
+				font-weight: 500;
+				
+			}
+			
+			
+			.title-label{
+				margin-left: 0.8333em;
+				margin-top: 3.25em;
+				font-size: 14px;
+			}
+			
+			.box-shadow{
+			  -moz-box-shadow:1px 2px 3px #dedcdc;
+			  -webkit-box-shadow:1px 2px 3px #dedcdc;
+			  box-shadow:2px 4.5px 9px #dedcdc;
+			}
+			
+			.aui-flex{
+				padding: 0.1667em;
+			}
+			
+			.aui-flex-srt-word-right {
+			    position: absolute;
+			    color:#FFFFFF;
+				font-weight: 500;
+				height: auto;
+				right: 0.1667em;
+				margin-right: 0.1667em;
+			}
+			
+			.mui-content,.aui-scrollView{
+				background-color: #ffffff;
+			}
+			
+			.aui-inter-user-img img{
+				width: 60%;
+				height: auto;
+				border-radius: 0px;
+			}
+			.aui-inter-user-img{
+				width:auto;
+				height: auto;
+				margin-left: 0.3rem;
+			}
+			.aui-inter-user-img{
+				margin-right: 0px;
+			}
+			.aui-flex-srt-word-right{
+				margin-top:2px;
+			}
+			
+		</style>
 	</head>
 
 	<body>
-
 		<header class="mui-bar mui-bar-nav aui-header ">
 			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #000000;"></a>
 			<h1 class="mui-title" style="color: #000000;" name="info-coupons-title"></h1>
 		</header>
 		<div class="mui-content">
-			<div class="no-coupons-center">
+			<div id= "noCoupons" class="no-coupons-center" style="display:none">
 				<img src="../../res/mine/nopic.png"  />
 				<div name="info-no-coupons-desc" class="info-no-coupons-desc"></div>
 			</div>
+			<div id="withCoupons">
+				<div class="aui-icon-list-area box-shadow">
+					<a href="javascript:;" class="aui-flex">
+						<div class="aui-flex-srt-word" name="info-followers-region" style="padding: 0.1667em;">
+							满100减20
+						</div>
+						<div class="aui-flex-srt-word-right">
+							2019-12-12截止
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 		<nav class=" mui-bar mui-bar-tab " style="background: none;">
-			<div class="no-coupons-center info-no-coupons-bottom-desc" name="info-no-coupons-bottom-desc"></div>
+			<div id="historyBtn" class="no-coupons-center info-no-coupons-bottom-desc" name="info-no-coupons-bottom-desc"></div>
 		</nav>
 	</body>
+
 	<script src="../../js/mui.min.js"></script>
 	<script src="myCoupons.js"></script>
 

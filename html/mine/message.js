@@ -33,10 +33,12 @@ function loadProperties(type) {
 		cache: false,
 		encoding: 'UTF-8',
 		callback: function() { // 回调方法    
-			$("[name='info-myBalance-title']").html($.i18n.prop('info-myBalance-title'));
-			$("[name='info-myBalance-withDraw-recharge']").html($.i18n.prop('info-myBalance-withDraw-recharge'));
-			$("[name='info-myBalance-withDraw-payCoin']").html("$");
-
+			$("[name='info-message-title']").html($.i18n.prop('info-message-title'));
+			$("[name='info-message-office']").html($.i18n.prop('info-message-office'));
+			$("[name='info-message-auto']").html($.i18n.prop('info-message-auto'));
+			$("[name='info-message-comments']").html($.i18n.prop('info-message-comments'));
+			$("[name='info-message-favorite']").html($.i18n.prop('info-message-favorite'));
+			$("[name='info-message-followers']").html($.i18n.prop('info-message-followers'));
 		}
 	});
 }

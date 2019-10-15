@@ -23,6 +23,10 @@ infoCenter = {
 		
 		$("#settingBtn").on("click",infoCenter.service.doSetting);
 		
+		$("#sendMessage").on("click",infoCenter.service.doSendMessage);
+		
+		
+		
 		
 		
 		
@@ -32,6 +36,10 @@ infoCenter = {
 
 	
 	service: {
+		
+		doSendMessage:function(){
+			window.location.href = "message.html";
+		},
 		
 		zoomPic:function(){
 			mui.previewImage();

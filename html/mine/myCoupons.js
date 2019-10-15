@@ -6,6 +6,8 @@ myCoupons = {
 
 	// 事件注册
 	event: function() {
+		
+		$("#historyBtn").on("click", myCoupons.service.doHistory);
 	},
 
 	
@@ -17,6 +19,7 @@ myCoupons = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		myCoupons.event();
 	},
 }
 myCoupons.init();
