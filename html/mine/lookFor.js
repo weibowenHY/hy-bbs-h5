@@ -6,6 +6,11 @@ lookFor = {
 
 	// 事件注册
 	event: function() {
+		$('#inputBtn').bind('keyup', function(event) {
+			if (event.keyCode == "13") {
+				alert("enter事件");
+			}
+		});
 	},
 
 	service: {
@@ -16,6 +21,7 @@ lookFor = {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		lookFor.event();
 	},
 }
 lookFor.init();

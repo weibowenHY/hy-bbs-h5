@@ -70,7 +70,7 @@ function renderPage(data){
 		$a = $('<a href="javascript:;" class="aui-flex"></a>');
 		$imgDiv = $('<div class="aui-inter-user-img"></div>');
 		$img = $('<img>');
-		$nameDiv = $('<div class="aui-flex-srt-word" name="info-brand-nike" style="padding: 0.1667em;"></div>');
+		$nameDiv = $('<div class="aui-flex-srt-word" name="info-brand-nike" style="padding: 0.1667em;width:100%"></div>');
 		$arrowDiv = $('<div class="aui-flex-arrow"></div>');
 		
 		$img.attr('src',element.image);

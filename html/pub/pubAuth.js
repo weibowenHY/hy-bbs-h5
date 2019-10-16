@@ -66,10 +66,10 @@ function loadProperties(type) {
 
 function renderPage(data){
 	var statusMine = {
-		"-1":"发布",
-		"0":"待审核",
-		"1":"通过",
-		"2":"未通过"
+		"-1":"PUBLISH",
+		"0":"WAITING",
+		"1":"PASS",
+		"2":"UNPASS"
 	};
 	$('.mui-content').empty();
 	$.each(data, function(index,element) {
@@ -79,20 +79,25 @@ function renderPage(data){
 		$firstA = $('<a href="javascript:;" class="aui-flex b-line"></a>');
 		$imgDiv = $('<div class="aui-inter-user-img"></div>');
 		$img = $('<img alt="" style="width: none;">');
-		$shopDiv = $('<div class="aui-flex-srt-word" style=" margin-left: -3.25em; margin-top: -1.45em; color: #FFFFFF;"></div>');
-		$shopSecDiv = $('<div class="aui-flex-srt-word"  style="margin-left: -3.25em; margin-bottom: -2.25em; color: #FFFFFF;font-size: 14px;"></div>');
+		$shopDiv = $('<div class="aui-flex-srt-word" style="width:100%;margin-left: -1.25em; margin-top: -1.45em; color: #FFFFFF;"></div>');
+		//$shopSecDiv = $('<div class="aui-flex-srt-word"  style="width:100%; margin-left: -3.25em; margin-bottom: -2.25em; color: #FFFFFF;font-size: 14px;"></div>');
 		$secA = $('<a href="javascript:;" class="aui-flex" style="height: 2.25em;"></a>');
 		$timeDiv = $('<div class="aui-flex-srt-word" style="  color: #FFFFFF;"></div>');
 		$cancleDiv = $('<div onclick="pubAuth.service.cancelInit()" class="aui-flex-srt-word"  style="color: #FFFFFF;font-size: 14px;margin-left: 3em;">cancel</div>');
 		$resultDiv = $('<div class="aui-flex-srt-word"  style="color: #FFFFFF;font-size: 14px; margin-left: 4em;"></div>');
 		
-		$img.attr('src',element.looks);
+		if(element.looks == ""){
+			$img.attr('src',"../../res/model/shoespic.png");
+		}else{
+					$img.attr('src',element.looks);
+		}
+
 		$imgDiv.append($img);
 		$shopDiv.text(element.name);
-		$shopSecDiv.text(element.content);
+		//$shopSecDiv.text(element.content);
 		$firstA.append($imgDiv);
 		$firstA.append($shopDiv);
-		$firstA.append($shopSecDiv);
+		//$firstA.append($shopSecDiv);
 		
 		$timeDiv.text(getYyyymmddhh24miss(element.createTime));
 		//状态,-1:发布,0：待审核,1：通过，2：未通过

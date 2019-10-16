@@ -59,6 +59,7 @@ centerInfo = {
 				dataType: 'json',
 				success: function(data) {
 					if(data.status == AJAX_SECCUSS) {
+						debugger;
 						//用户名
 						$('#userName').text(data.data.username);
 						//头像

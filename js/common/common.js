@@ -35,7 +35,7 @@ var CONSTANT = {
 	token: "token",
 	auth: "auth",
 
-	baseUrl: 'http://localhost:8081',
+	baseUrl: 'http://49.232.27.66:8081',
 
 	pageSize: 10,
 	//订单列表显示5条
