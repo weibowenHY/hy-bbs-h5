@@ -237,32 +237,52 @@
 	    $('.wenwen_btn').attr('onclick','to_write()');
 	    $('.write_box,.wenwen_help button').hide();
 	    $('.circle-button,.wenwen_help a').show();
-	}
+}
 
-	function up_say(){
+function up_say() {
 		$('.write_list').remove();
-	    var text = $('.write_box input').val(),
-	        str  = '<div class="question">';
-	        str += '<div class="heard_img right"><img src="../../res/holdChat/icon.png"/></div>';
-	        str += '<div class="question_text clear"><p>'+text+'</p><i></i>';
-	        str += '</div></div>';
-
+	    var text = $('.write_box input').val();
 	    if(text == ''){
 	        alert('请输入提问！');
 	        $('.write_box input').focus();
 	    }else{
-	        $('.speak_box').append(str);
-	        $('.write_box input').val('');
-	        $('.write_box input').focus();
-	        autoWidth();
-	        for_bottom();
-	        setTimeout(function(){
-	            var ans  = '<div class="answer"><div class="heard_img left"><img src="../../res/holdChat/icon.png"/></div>';
-	            	ans += '<div class="answer_text"><p>您发送的文字是：'+text+'</p><i></i>';
-	        		ans += '</div></div>';
-	        	$('.speak_box').append(ans);
-				for_bottom();
-	        },1000);
+	    	var paramer = {
+				"answer": "",
+				"content":$('.write_box input').val(),
+				"createTime": "",
+				"id": "",
+				"isRead": "",
+				"userId": ""
+			}
+			$.ajax({
+				url: CONSTANT.baseUrl +"/complaint/add/" + TOKEN_REL.token,
+				type: "POST",
+				contentType: "application/json",
+				data: JSON.stringify(paramer),
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+					var	str  = '<div class="question">';
+				        str += '<div class="heard_img right"><img src="../../res/holdChat/icon.png"/></div>';
+				        str += '<div class="question_text clear"><p>'+$('.write_box input').val()+'</p><i></i>';
+				        str += '</div></div>';
+						$('.speak_box').append(str);
+				        $('.write_box input').val('');
+				        $('.write_box input').focus();
+				        autoWidth();
+				        for_bottom();
+				        /*setTimeout(function(){
+				            var ans  = '<div class="answer"><div class="heard_img left"><img src="../../res/holdChat/icon.png"/></div>';
+				            	ans += '<div class="answer_text"><p>您发送的文字是：'+text+'</p><i></i>';
+				        		ans += '</div></div>';
+				        	$('.speak_box').append(ans);
+							for_bottom();
+				        },1000);*/
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
 	    }
 	}
 

@@ -40,7 +40,7 @@ fans = {
 				success: function(data) {
 					if(data.status == AJAX_SECCUSS) {
 						mui.toast("success");
-						followers.service.getFollowers();
+						fans.service.getFollowers();
 					}else{
 						mui.toast(data.error);
 					}
@@ -57,7 +57,7 @@ fans = {
 				success: function(data) {
 					if(data.status == AJAX_SECCUSS) {
 						mui.toast("success");
-						followers.service.getFollowers();
+						fans.service.getFollowers();
 					}else{
 						mui.toast(data.error);
 					}
@@ -71,7 +71,7 @@ fans = {
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
 		fans.event();
-		//followers.service.getFollowers();
+		fans.service.getFollowers();
 	},
 }
 fans.init();
@@ -89,7 +89,7 @@ function loadProperties(type) {
 		
 		$("[name='info-fans-title']").html($.i18n.prop('info-fans-title'));
 		$("[name='info-followers-following']").html($.i18n.prop('info-followers-following'));
-		
+		$("[name='info-followers-cancle']").html($.i18n.prop('info-followers-cancle'));
 		}
 	});
 }
@@ -115,9 +115,9 @@ function renderPage(data){
 				$genderImg.attr('src','../../res/mine/gender-w.png');
 			}
 			if (element.relationFlag == 1) {
-				$button = $('<button onclick="followers.service.cancleFollow('+ element.id+')" class="followingCancle" name="info-followers-cancle" style="border-radius: 15px;"></button>');
+				$button = $('<button onclick="fans.service.cancleFollow('+ element.id+')" class="followingCancle" name="info-followers-cancle" style="border-radius: 15px;"></button>');
 			} else{
-				$button = $('<button onclick="followers.service.addFollow('+ element.id+')" class="followingAdd" name="info-followers-following" style="border-radius: 15px;"></button>');
+				$button = $('<button onclick="fans.service.addFollow('+ element.id+')" class="followingAdd" name="info-followers-following" style="border-radius: 15px;"></button>');
 			}
 			
 			$button.attr('toUserId',element.id);

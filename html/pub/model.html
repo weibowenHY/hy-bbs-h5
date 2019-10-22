@@ -13,6 +13,7 @@
 		<script src="../../js/jquery/jquery-3.2.1.min.js"></script>
 		<script src="../../js/i18n/jquery.json.min.js"></script>
 		<script src="../../js/i18n/jquery.i18n.properties.js"></script>
+		<script src="../../js/common/common.js"></script>
 		<style>
 			.right-button{
 				font-size: 17px;
@@ -177,24 +178,24 @@
 		<div class="mui-content">
 			<div class="aui-flex aui-flex-head" style="padding: 1.1667em;padding-bottom: 0px;">
 				<div class="aui-my-user">
-					<img src="../../res/model/head.png" alt="">
+					<img id="userIcon" src="../../res/model/head.png" alt="">
 				</div>
 				<div class="aui-flex-box" style="margin-left: -20px;">
-					<h1>Name</h1>
+					<h1 id="userName">Name</h1>
 				</div>
 			</div>
 			<div class="aui-icon-list-area">
 				<a href="javascript:;" class="aui-flex">
 					<div class="aui-inter-user-img">
-						<img src="../../res/model/shoespic.png" alt="" style="width: none;">
+						<img id="shoesImg" alt="" style="width: none;">
 					</div>
-					<div class="aui-flex-srt-word" style=" margin-left: -3.25em; margin-top: -1.45em; color: #000000;">
-						Adidas
+					<div id="shoesName" class="aui-flex-srt-word" style=" margin-left: -3.25em; margin-top: -1.45em; color: #000000;">
+						
 					</div>
 					
-					<div class="aui-flex-srt-word"  style="margin-left: -3.25em; margin-bottom: -2.25em; color: #000000;font-size: 14px;">
+					<!--<div id="shoes" class="aui-flex-srt-word"  style="margin-left: -3.25em; margin-bottom: -2.25em; color: #000000;font-size: 14px;">
 						Gym Shoes
-					</div>
+					</div>-->
 				</a>
 			</div>
 			<div class="title-label" name="info-model-addpic"></div>
@@ -232,7 +233,8 @@
 					</div>
 				</a>
 			</div>
-			<div   class="aui-palace aui-palace-one">
+			<div  class="aui-palace aui-palace-one">
+				<input type="file" name="uploadIcon" id="uploadIcon" value="" style="display: none;"/>
 				<a id="boxesBtn" href="javascript:;" class="aui-palace-grid">
 					<div class="aui-palace-grid-icon">
 						<img src="../../res/model/boxes.png" alt="">
@@ -259,7 +261,7 @@
 				</a>
 			</div>
 			<div class="title-label" name="info-model-add-note" style="margin-top:1.0833em"></div>
-				<textarea style="position:absolute;background-color: #dcdcdc;width: 90%;left: 5%;"></textarea>
+				<textarea id="content" style="position:absolute;background-color: #dcdcdc;width: 90%;left: 5%;"></textarea>
 			<div class="gradient-bg">
 				<div >
 					<button type="button" class="mui-btn bottomButton btn-cus"  id="saveBtn" name="info-model-publish"></button>

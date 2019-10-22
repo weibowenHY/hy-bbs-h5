@@ -6,18 +6,85 @@ countryChoose = {
 
 	// 事件注册
 	event: function() {
+		$('#albania').on('click',function(){
+			countryChoose.service.setCountry("albania");
+		});
+		$('#bulgaria').on('click',function(){
+			countryChoose.service.setCountry("bulgaria");
+		});
+		$('#bosnia').on('click',function(){
+			countryChoose.service.setCountry("bosnia");
+		});
+		$('#romania').on('click',function(){
+			countryChoose.service.setCountry("romania");
+		});
+		$('#macedonia').on('click',function(){
+			countryChoose.service.setCountry("macedonia");
+		});
+		$('#yugoslavia').on('click',function(){
+			countryChoose.service.setCountry("yugoslavia");
+		});
+		$('#greece').on('click',function(){
+			countryChoose.service.setCountry("greece");
+		});
+		$('#italy').on('click',function(){
+			countryChoose.service.setCountry("italy");
+		});
+		$('#slovenia').on('click',function(){
+			countryChoose.service.setCountry("slovenia");
+		});
 		
 	},
 
 	
 	service: {
-		
+		getCountry:function(){
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						if (data.data.country) {
+							$('.Check').hide();
+							$('#'+data.data.country).find('.Check').show();
+						}else{
+							$('.Check').hide();
+						}
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+		},
+		setCountry:function(paramer){
+			$.ajax({
+				url: CONSTANT.baseUrl + "/user/" + TOKEN_REL.token + '?country='+paramer,
+				type: "put",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						$('.Check').hide();
+						$('#'+paramer).find('.Check').show();
+						mui.toast("success");
+					} else {
+						mui.toast(data.msg);
+					}
+				}
+			});
+		}
 	},
 	dao: {},
 	init: function() {
 		//LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({});
 		var LANGUAGE_CODE = "en";
 		loadProperties(LANGUAGE_CODE);
+		countryChoose.service.getCountry();
+		countryChoose.event();
 	},
 }
 countryChoose.init();

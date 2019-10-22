@@ -11,7 +11,8 @@ shoes = {
 
 	
 	service: {
-		changeModel:function(){
+		changeModel:function(parame){		
+			window.sessionStorage.setItem('shoes',parame);
 			window.location.href = "model.html";
 		},
 		rendata:function(){
@@ -66,7 +67,15 @@ function loadProperties(type) {
 function renderPage(data){
 	$('.mui-content').empty();
 	$.each(data, function(index,element) {
-		$areaDiv = $('<div onclick="shoes.service.changeModel()" class="aui-icon-list-area box-shadow"></div>');
+		var neData = {
+			"name":element.name,
+			"id":element.id,
+			"code":element.code,
+			"image":element.image
+		}
+		
+		$areaDiv = $('<div class="aui-icon-list-area box-shadow"></div>');
+//		$areaDiv = $('<div onclick="shoes.service.changeModel('+ name+'\,'+id+'\,'+code+'\,'+imageq +')" class="aui-icon-list-area box-shadow"></div>');
 		$a = $('<a href="javascript:;" class="aui-flex"></a>');
 		$imgDiv = $('<div class="aui-inter-user-img"></div>');
 		$img = $('<img>');
@@ -83,5 +92,9 @@ function renderPage(data){
 		$areaDiv.append($a);
 		
 		$('.mui-content').append($areaDiv);
+		
+		$areaDiv.click(function(){
+			shoes.service.changeModel(JSON.stringify(neData));
+		})
 	});
 }

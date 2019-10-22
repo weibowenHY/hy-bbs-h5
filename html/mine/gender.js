@@ -25,13 +25,7 @@ gender = {
 				dataType: 'json',
 				success: function(data) {
 					if(data.status == AJAX_SECCUSS) {
-						if (data.data.sex == 1) {
-							$("#mCheck").show();
-							$("#fCheck").hide();
-						}else {
-							$("#mCheck").hide();
-							$("#fCheck").show();
-						}
+						
 					}else{
 						mui.toast(data.error);
 					}
