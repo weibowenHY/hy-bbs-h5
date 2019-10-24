@@ -8,13 +8,32 @@ lookFor = {
 	event: function() {
 		$('#inputBtn').bind('keyup', function(event) {
 			if (event.keyCode == "13") {
-				alert("enter事件");
+				alert(111);
+				var par = $('#inputBtn').val();
+				lookFor.service.renderData(par);
 			}
 		});
 	},
 
 	service: {
-
+		renderData:function(par){
+			alert(par);
+			$.ajax({
+				url: CONSTANT.baseUrl + "/collect/get/" + TOKEN_REL.token + "?content=" + par,
+				type: "get",
+				contentType: "application/json",
+				data: {},
+				dataType: 'json',
+				success: function(data) {
+					if(data.status == AJAX_SECCUSS) {
+						var res = data.data;
+						renderPage(res);
+					}else{
+						mui.toast(data.error);
+					}
+				}
+			});
+		},
 	},
 	dao: {},
 	init: function() {
@@ -39,4 +58,22 @@ function loadProperties(type) {
 
 		}
 	});
+}
+
+function renderPage(res){
+	if (res.length != 0) {
+		$('.wall').empty();
+		$.each(res, function(index,element) {
+			$li = $('<li class="article"></li>');
+			$a = $('<a href="http://www.17sucai.com/"></a>');
+			$img = $('<img/>');
+			$div = $('<div style="color: #FFFFFF;font-weight: bold;"></div>');
+			$div.text(element.title);
+			$img.attr('src',element.image);
+			$a.append($img);
+			$a.append($div);
+			$li.append($a);
+			$('.wall').append($li);
+		});
+	}
 }
